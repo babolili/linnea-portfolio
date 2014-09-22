@@ -12,16 +12,29 @@
   clear: both;
   display: block;
   float: left;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
-%vertical-align {
+%relative-vertical-center {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+%absolute-vertical-center {
+  position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
-%aboslute-center {
+%absolute-center {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -29,14 +42,3 @@
   transform: translate(-50%, -50%);
 }
 
-%default-link-styling {
-
-}
-
-%alternative-link-styling {
-
-}
-
-%button {
-
-}

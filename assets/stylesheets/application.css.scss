@@ -1,10 +1,13 @@
 @import "framework/bourbon/bourbon";
 @import "grid-settings";
 @import "framework/neat/neat";
-@import "styling/global/hard-reset";
 @import "styling/global/variables";
+@import "styling/global/functions";
+@import "styling/global/hard-reset";
 @import "styling/global/mixins";
-@import "styling/global/extenders";
+@import "styling/global/positioning-extenders";
 @import "styling/global/typography";
+
+
 @import "styling/objects/forms/forms";
-@import "styling/objects/forms/inputs";
+@import "styling/objects/forms/selects";

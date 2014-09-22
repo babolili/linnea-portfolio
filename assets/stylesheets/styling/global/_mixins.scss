@@ -1,10 +1,35 @@
+///modifies neat's default settings
+
+@mixin padded-container {
+  @include clearfix;
+  max-width: $max-width;
+  padding-left: $padding-base;
+  padding-right: $padding-base;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  @include media($ipad) {
+    padding-left: $padding-base*2;
+    padding-right: $padding-base*2;
+  }
+  @include media($tablet) {
+    padding-left: $padding-base;
+    padding-right: $padding-base;
+  }
+  @include media($phone) {
+    padding-left: $padding-base/2;
+    padding-right: $padding-base/2;
+  }
+}
+
 @mixin col($col-no, $shift-no, $media, $drop-to, $shift-to) {
   @include span-columns($col-no);
-      @include shift($shift-no);
-      @include media($media) {
-        @include span-columns($drop-to);
-        @include shift($shift-to);
-      }
+  @include shift($shift-no);
+  @include media($media) {
+    @include span-columns($drop-to);
+    @include shift($shift-to);
+  }
 }
 
 @mixin simple-col($col-no, $shift-no) {
@@ -12,24 +37,22 @@
   @include shift($shift-no);
 }
 
-@mixin single-col {
-  @include span-columns(12);
-  @include shift(0);
-}
+///width height
 
-
-@mixin padded-container {
-  @include clearfix;
-  max-width: $max-width;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: {
-    left: auto;
-    right: auto;
+@mixin wh($width: false, $height: false) {
+  $width: unquote($width);
+  @if $height != none {
+    $height: unquote($height);
+  }
+  @if $height != false {
+    width: #{$width};
+    height: #{$height};
+  }
+  @else {
+    width: #{$width};
+    height: #{$width};
   }
 }
-
-//please create variables for family.
 
 @mixin font($family, $size, $weight, $color) {
   font-family: $family;
@@ -38,39 +61,6 @@
   color: $color;
 }
 
-@mixin default-spacing {
-  h1 {
-    padding-bottom: 40px;
-  }
-
-  h2 {
-    padding-bottom: 30px;
-  }
-
-  h3 {
-    padding-bottom: 20px;
-  }
-
-  h4 {
-    padding-bottom: 20px;
-  }
-
-  p {
-    padding-bottom: 20px;
-  }
-}
-
-@mixin vertical-breakpoint($point) {
-  @if $point == large {
-    @media (max-height: 900px) { @content; }
-  }
-  @else if $point == medium {
-    @media (max-height: 700px) { @content; }
-  }
-  @else if $point == small {
-    @media (max-height: 500px)  { @content; }
-  }
-}
 
 @mixin keyframes($animation-name) {
   @-webkit-keyframes $animation-name {
