@@ -1,8 +1,81 @@
-<div class="standard-styled-select">
-  <select name="" id="">
-    <option value="">A</option>
-    <option value="">B</option>
-    <option value="">C</option>
-    <option value="">D</option>
-  </select>
+<div class="container">
+
+  <div class="display-selects padding">
+    <h2>
+      Css Only Select
+    </h2>
+    <div class="standard-styled-select">
+      <select name="" id="">
+        <option value="">A Option</option>
+        <option value="">B Option</option>
+        <option value="">C Option</option>
+        <option value="">D Option</option>
+      </select>
+    </div>
+  </div>
+  <div class="code-block">
+    <h4>CSS</h4>
+    <pre>
+      <code>
+  %styled-select-base {
+    width: 100%;
+    overflow: hidden;
+    background: image-url('select.png') no-repeat right;
+    select {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+  }
+  .standard-styled-select {
+    @extend %styled-select-base;
+    height: $input-base-height;
+    border-radius: $border-base-radius;
+    background-color: $input-background-color;
+    border: 1px solid $form-border-color;
+    z-index: 99;
+
+    select {
+      width: 100%;
+      height: $input-base-height;
+      padding: $input-base-padding;
+      font-size: $form-font-size;
+    }
+  }
+      </code>
+    </pre>
+  </div>
+  <div class="code-block">
+    <h4>
+      HTML
+    </h4>
+    <pre>
+      <code>
+  &lt;div class="standard-styled-select"&gt;
+    &lt;select name="" id=""&gt;
+      &lt;option value=""&gt;A Option&lt;/option&gt;
+      &lt;option value=""&gt;B Option&lt;/option&gt;
+      &lt;option value=""&gt;C Option&lt;/option&gt;
+      &lt;option value=""&gt;D Option&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+      </code>
+    </pre>
+  </div>
+  <div class="code-block"></div>
+  <div class="display-selects">
+    <h2>
+      Javascript Based Select
+    </h2>
+    <div class="standard-styled-select">
+      <select name="" id="">
+        <option value="">A Option</option>
+        <option value="">B Option</option>
+        <option value="">C Option</option>
+        <option value="">D Option</option>
+      </select>
+    </div>
+  </div>
 </div>

@@ -1,25 +1,23 @@
 
-$input-background-color: #ffffff;
+
 $form-padding: $padding-base;
 
+//Inputs
+$input-background-color: #ffffff;
+$input-base-height: rem(35px);
+$input-base-padding: 5px;
+
 //FORM TYPOGRAPHY
-$form-font-family: $sans;
+$form-font-family: $serif;
 $form-font-size: $base-font-size;
 
 //FORM BORDERS
-$form-border-color: darken($background, 5%);
-$form-border-color-hover: darken($background, 10%);
-$form-border-color-focus: $main-colour;
+$form-border-color: $border-base-color;
+$form-border-color-hover: $border-base-color;
+$form-border-color-focus: $main-color;
 $form-border-radius: $border-base-radius;
 
 //FORM ACTION STATES
 $form-box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
 
-$field-padding: $padding-base;
-
-%field {
-  width: 100%;
-  padding: $field-padding;
-  border-radius: $border-base-radius;
-}

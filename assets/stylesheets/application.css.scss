@@ -1,13 +1,21 @@
+//Framework controllers
 @import "framework/bourbon/bourbon";
-@import "grid-settings";
+@import "grid-settings"; //editable
 @import "framework/neat/neat";
-@import "styling/global/variables";
+
+//globals
 @import "styling/global/functions";
+@import "styling/global/variables";
 @import "styling/global/hard-reset";
 @import "styling/global/mixins";
 @import "styling/global/positioning-extenders";
+@import "styling/global/body";
 @import "styling/global/typography";
 
-
-@import "styling/objects/forms/forms";
+//forms
+@import "styling/objects/forms/form-variables";
+@import "styling/objects/forms/inputs";
 @import "styling/objects/forms/selects";
+
+
+@import "display"

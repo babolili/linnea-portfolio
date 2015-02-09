@@ -38,8 +38,8 @@ textarea,
   font-family: $form-font-family;
   font-size: $form-font-size;
   margin-bottom: $padding-base / 2;
-  padding: 5px;
-  height: 35px;
+  padding: $padding-base/4 ;
+  height: $input-base-height;
 
   &:hover {
     border-color: $form-border-color-hover;
@@ -53,7 +53,7 @@ textarea,
 }
 input[type="text"] {
   @include appearance(none);
-  height: 35px;
+  height: $input-base-height;
   padding: 7px;
 }
 input[type="search"] {
@@ -65,8 +65,8 @@ input[type="checkbox"], input[type="radio"] {
   margin-right: $padding-base / 4;
 }
 input[type="date"] {
-  height: 35px;
-  padding: 5px;
+  height: $input-base-height;
+  padding: $padding-base/4 ;
   background-image: none;
   -webkit-appearance: none;
   -moz-appearance: none;
