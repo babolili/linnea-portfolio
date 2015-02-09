@@ -5,9 +5,16 @@ $main-color: #666666;
 $text-body-color: #444444;
 $black: #272822;
 
+
+$salmon: #F6A09E;
+$magenta: #F07C8F;
 //borders
 $border-base-radius: rem(4px);
 $border-base-color: #dddddd;
 
 //paddings
-$padding-base: rem(20px);
+$padding-xl: rem(30px);
+$padding-l: rem(20px);
+$padding-base: rem(15px);
+$padding-s: $padding-l/2;
+$padding-xs: $padding-l/4;
