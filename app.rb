@@ -2,6 +2,7 @@ Bundler.require
 
 require 'sinatra/asset_pipeline'
 require 'sinatra/partial'
+require 'sinatra/content_for'
 
 class App < Sinatra::Base
   configure do
