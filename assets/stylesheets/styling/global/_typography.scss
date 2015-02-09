@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic|Pacifico|Raleway:600,700,400,300);
+
 $thin: 100;
 $light: 300;
 $regular: 400;
@@ -6,11 +8,19 @@ $bold: 700;
 $heavy: 800;
 $font-black: 900;
 
-$best-serif-fonts: "helvetica neue", "helvetica", "Arial", "sans-serif";
+$best-sans-fonts: 'helvetica neue', 'helvetica', 'Arial', sans-serif;
+$best-serif-fonts: 'Georgia', 'Palatino Linotype', 'Book Antiqua', serif;
 
-$sans: "brandon-grotesque-1","brandon-grotesque-2", $best-serif-fonts;
-$serif: "ff-tisa-web-pro-1","ff-tisa-web-pro-2", "Georgia", "Times New Roman", serif;
+$sans: 'Raleway', $best-sans-fonts;
+$script: 'Pacifico', cursive;
+$serif: 'Noto Serif', $best-serif-fonts;
 
+strong {
+  font-weight: $semibold;
+}
+b {
+  font-weight: $bold;
+}
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
@@ -22,22 +32,18 @@ $serif: "ff-tisa-web-pro-1","ff-tisa-web-pro-2", "Georgia", "Times New Roman", s
   }
 }
 
-h1,h2,h3 {
-  font-family: $sans;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 
 h4,h5 {
   font-family: $serif;
 }
 
 h1 {
-
+  @include font($sans,rem(40px),$light,$black);
+  line-height: 0.8;
 }
 
 h2 {
-
+   @include font($sans,rem(30px),$light,$black);
 }
 
 h3 {

@@ -1,26 +1,51 @@
-<% content_for :some_key do %>
-  <chunk of="html">
-    <!-- FOR GOOGLE PLUS -->
-      <meta itemprop="name" content="[title]">
-      <meta itemprop="description" content="[description]">
-      <meta itemprop="image" content="[image]">
+<% content_for :social_meta do %>
+<!-- FOR GOOGLE PLUS -->
+  <meta itemprop="name" content="[title]">
+  <meta itemprop="description" content="[description]">
+  <meta itemprop="image" content="[image]">
 
-      <!-- FOR FACBOOK & LINKEDIN -->
+  <!-- FOR FACBOOK & LINKEDIN -->
 
-      <meta property="og:image" content="[image]"/>
-      <meta property="og:title" content="[title]" />
-      <meta property="og:description" content="[description]" />
-      <meta property="og:url" content="[url]" />
+  <meta property="og:image" content="[image]"/>
+  <meta property="og:title" content="[title]" />
+  <meta property="og:description" content="[description]" />
+  <meta property="og:url" content="[url]" />
 
-      <!-- FOR TWITTER -->
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:site" content="[@username]">
-      <meta name="twitter:title" content="[title]">
-      <meta name="twitter:description" content="[description]">
-      <meta name="twitter:image:src" content="[image]">
-  </chunk>
+  <!-- FOR TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="[@username]">
+  <meta name="twitter:title" content="[title]">
+  <meta name="twitter:description" content="[description]">
+  <meta name="twitter:image:src" content="[image]">
 <% end %>
 
-<div class="container">
-  <%= partial(:'partials/inputs/selects') %>
+<div class="type-hero">
+  <div class="container">
+    <div class="butterfly">
+      <div class="left">
+        <img src="<%= image_path 'butterflies/1a.png' %>" alt="">
+      </div>
+      <div class="right">
+        <img src="<%= image_path 'butterflies/1b.png' %>" alt="">
+      </div>
+    </div>
+    <div class="text">
+      <h1>
+        Hi, I'm <b>Linnea</b>
+      </h1>
+      <h2>
+        I'm a UX and Frontend Designer.
+      </h2>
+    </div>
+    <div class="butterfly alternate">
+      <div class="left">
+        <img src="<%= image_path 'butterflies/2a.png' %>" alt="">
+      </div>
+      <div class="right">
+        <img src="<%= image_path 'butterflies/2b.png' %>" alt="">
+      </div>
+    </div>
+  </div>
 </div>
+
+<% partial(:'partials/inputs/selects') %>

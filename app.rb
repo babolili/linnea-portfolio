@@ -5,6 +5,7 @@ require 'sinatra/partial'
 require 'sinatra/content_for'
 
 class App < Sinatra::Base
+  helpers Sinatra::ContentFor
   configure do
     set :production, ENV['RACK_ENV'] == 'production'
   end
