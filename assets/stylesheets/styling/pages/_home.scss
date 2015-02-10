@@ -72,5 +72,10 @@
       @include transform-origin(left center);
     }
   }
-
+}
+.test-container {
+  height: 600px;
+  background: image-url('butterfly-bg.jpg');
+  background-size: 150px;
+  background-attachment: fixed;
 }
