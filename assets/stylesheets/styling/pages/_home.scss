@@ -80,3 +80,29 @@
   background-size: 150px;
   background-attachment: fixed;
 }
+.matterhorn-container {
+  @extend %clearing-block;
+  background: image-url('matterhorn.jpg');
+  background-size: cover;
+  &:after {
+    @include position(absolute, 0 0 0 0);
+
+  }
+  .text {
+    @include col(5,1,$phone,9,0);
+    background: rgba(white,0.95);
+    margin-top: $padding-xl;
+    margin-bottom: $padding-xl;
+    padding: $padding-xl;
+    @include transform(translateY(50%));
+    h2 {
+      padding-bottom: $padding-base;
+    }
+    h5 {
+      font-size: rem(18px);
+    }
+    h1 {
+      padding-bottom: $padding-l;
+    }
+  }
+}

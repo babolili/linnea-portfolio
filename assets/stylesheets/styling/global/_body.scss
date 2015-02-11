@@ -1,7 +1,8 @@
-body {
-  background-color: $background;
-}
-
 .container {
   @include outer-container;
+}
+.main-container {
+  @include outer-container;
+  background-color: $background;
+  min-height: 100%;
 }
