@@ -1,3 +1,6 @@
+body {
+  background-color: $background;
+}
 .container {
   @include outer-container;
 }
