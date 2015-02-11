@@ -1,6 +1,7 @@
 .type-hero {
   @extend %clearing-block;
   padding-bottom: $padding-xl;
+  padding-top: $padding-xl;
   background: white;
 
   .text {
@@ -9,7 +10,7 @@
     h1 {
       font-size: rem(80px);
       b {
-        color: $magenta;
+        color: $salmon;
       }
     }
   }

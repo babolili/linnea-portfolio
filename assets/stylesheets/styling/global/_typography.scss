@@ -55,11 +55,11 @@ h4 {
 }
 
 h5 {
-
+  @include font($script,rem(100px),$light,$black);
 }
 
 p {
-  @include font($serif,rem(18px),$regular,$salmon);
+  @include font($serif,rem(20px),$regular,$text-body-color);
 }
 
 blockquote {
