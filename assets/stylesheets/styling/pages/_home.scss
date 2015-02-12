@@ -82,27 +82,80 @@
 }
 .matterhorn-container {
   @extend %clearing-block;
-  background: image-url('matterhorn.jpg');
+  position: relative;
   background-size: cover;
-  &:after {
-    @include position(absolute, 0 0 0 0);
-
+  overflow: hidden;
+  &:before {
+    @include position(absolute, 0px 0px 0px 0px);
+    content: '';
+    display: block;
+    background: image-url('matterhorn.jpg');
+    background-size: cover;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  .image {
+    @include col(5,0,$phone,9,0);
+    position: absolute;
+    bottom: 0px;
+    right: $padding-base;
+    z-index: 9;
+    padding-top: $padding-xl;
+    border: 2px solid white;
+    border-radius: rem(10px);
+    @include transform(translateY(30px));
+    &:before {
+      position: absolute;
+      content: '○ ○ ○';
+      font-size: rem(18px);
+      line-height: 1;
+      top: $padding-xs;
+      left: $padding-xs;
+      color: white;
+      font-family: $sans;
+      font-weight: $semibold;
+    }
   }
   .text {
     @include col(5,1,$phone,9,0);
-    background: rgba(white,0.95);
-    margin-top: $padding-xl;
+    background: rgba(white,0.5);
+    margin-top: $padding-xl*4;
     margin-bottom: $padding-xl;
-    padding: $padding-xl;
-    @include transform(translateY(50%));
+    box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.2);
+    position: relative;
+    border-radius: rem(20px);
+    > div {
+      padding: $padding-xl;
+    }
+    .title {
+      border-bottom: 2px solid rgba($blue,0.8);
+    }
+    .opaque {
+      background: white;
+      border-radius: 0 0 rem(20px) rem(20px);
+    }
     h2 {
       padding-bottom: $padding-base;
     }
     h5 {
       font-size: rem(18px);
     }
-    h1 {
-      padding-bottom: $padding-l;
+    &:after {
+      content: 'Product Design';
+      display: block;
+      background: $blue;
+      width: rem(100px);
+      height: rem(100px);
+      position: absolute;
+      top: 0px;
+      right: $padding-base;
+      @include transform(translateY(-50%));
+      border-radius: 50%;
+      padding-top: rem(50px) - rem(18px);
+      line-height: 1;
+      box-sizing: border-box;
+      @include font($script,rem(18px),$semibold,white);
+      text-align: center;
     }
   }
 }
