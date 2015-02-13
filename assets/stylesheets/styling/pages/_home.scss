@@ -85,29 +85,17 @@
   .goat {
     opacity: 0.6;
   }
-  .image {
+  .image-block {
     @include col(5,0,$phone,9,0);
     z-index: 9;
     margin-top: $padding-xl*2;
     position: relative;
-    padding-top: $padding-xl;
-    border: 2px solid white;
     border-radius: rem(10px);
     img {
       margin-bottom: -5px;
-      border-radius: 0 0 rem(10px) rem(10px);
+      border-radius: rem(10px);
     }
-    &:before {
-      position: absolute;
-      content: '○ ○ ○';
-      font-size: rem(18px);
-      line-height: 1;
-      top: $padding-xs;
-      left: $padding-xs;
-      color: white;
-      font-family: $sans;
-      font-weight: $semibold;
-    }
+
     &:after {
       content: 'Product Design';
       display: block;
