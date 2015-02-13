@@ -74,36 +74,29 @@
     }
   }
 }
-.test-container {
-  height: 600px;
-  background: image-url('butterfly-bg.jpg');
-  background-size: 150px;
-  background-attachment: fixed;
-}
+
 .matterhorn-container {
   @extend %clearing-block;
   position: relative;
   background-size: cover;
   overflow: hidden;
-  &:before {
-    @include position(absolute, 0px 0px 0px 0px);
-    content: '';
-    display: block;
-    background: image-url('matterhorn.jpg');
-    background-size: cover;
-    opacity: 0.3;
-    z-index: 0;
+  height: 50%;
+
+  .goat {
+    opacity: 0.6;
   }
   .image {
     @include col(5,0,$phone,9,0);
-    position: absolute;
-    bottom: 0px;
-    right: $padding-base;
     z-index: 9;
+    margin-top: $padding-xl*2;
+    position: relative;
     padding-top: $padding-xl;
     border: 2px solid white;
     border-radius: rem(10px);
-    @include transform(translateY(30px));
+    img {
+      margin-bottom: -5px;
+      border-radius: 0 0 rem(10px) rem(10px);
+    }
     &:before {
       position: absolute;
       content: '○ ○ ○';
@@ -115,35 +108,10 @@
       font-family: $sans;
       font-weight: $semibold;
     }
-  }
-  .text {
-    @include col(5,1,$phone,9,0);
-    background: rgba(white,0.5);
-    margin-top: $padding-xl*4;
-    margin-bottom: $padding-xl;
-    box-shadow: 0px 0px 6px -1px rgba(0,0,0,0.2);
-    position: relative;
-    border-radius: rem(20px);
-    > div {
-      padding: $padding-xl;
-    }
-    .title {
-      border-bottom: 2px solid rgba($blue,0.8);
-    }
-    .opaque {
-      background: white;
-      border-radius: 0 0 rem(20px) rem(20px);
-    }
-    h2 {
-      padding-bottom: $padding-base;
-    }
-    h5 {
-      font-size: rem(18px);
-    }
     &:after {
       content: 'Product Design';
       display: block;
-      background: $blue;
+      background: $salmon;
       width: rem(100px);
       height: rem(100px);
       position: absolute;
@@ -157,5 +125,24 @@
       @include font($script,rem(18px),$semibold,white);
       text-align: center;
     }
+  }
+  .text {
+    @include col(5,1,$phone,9,0);
+    margin-bottom: $padding-xl*2;
+    position: relative;
+    border-radius: rem(20px);
+    padding: $padding-xl;
+
+    h2 {
+      padding-bottom: $padding-base;
+    }
+    h1 {
+      padding-bottom: $padding-base;
+    }
+    .caption {
+      @include transform(translateY(-50%));
+
+    }
+
   }
 }
