@@ -18,12 +18,21 @@ class App < Sinatra::Base
 
   def initialize
     super
-
   end
-
   # Define urls like this, erb :file links to /views/file.erb
   get "/" do
     erb :index
   end
+  
+  get "/work" do
+    erb :work
+  end
 
+  get "/contact" do
+    erb :contact
+  end
+
+  get "/blog" do
+    erb :blog
+  end
 end
