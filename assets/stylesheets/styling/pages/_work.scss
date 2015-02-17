@@ -2,6 +2,7 @@
 	padding-top: $padding-xl*2;
 	height: 100%;
 	> div {
+		min-height: 80%;
 	}
 	.matterhorn-container {
 		.main-caption {
@@ -9,7 +10,76 @@
 		}
 	}
 }
-.ubiquity-container {
+
+%right-text-container {
 	@extend %clearing-block;
-	background: white;
+	position: relative;
+	background: rgba($salmon,0.8);
+	border-bottom: 1px solid $border-base-color;
+	z-index: 1;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+		z-index: -1;
+	}
+	.image-container {
+		@include col(6,0,$phone,9,0);
+	}
+	.main-caption {
+		@include col(6,0,$phone,9,0);
+		@include omega();
+		padding: $padding-xl $padding-l;
+		margin-top: $padding-xl*2;
+		margin-bottom: $padding-xl*2;
+		background: rgba($salmon,0.8);
+		h1, h2, p {
+			color: white;
+		}
+	}
+	.ghost-button {
+		@include button(white, $salmon, white, $salmon);
+		margin-top: $padding-base;
+		&:hover {
+			background-color: white;
+			border-color: white;
+		}
+	}
+}
+.ubiquity-container {
+	@extend %right-text-container;
+  &:before {
+  	left: 0px;
+		background: image-url('book.svg');
+		background-position: center 0px;
+		background-size: 80%;
+	  background-repeat: no-repeat;
+	  z-index: -1;
+  }
+  > div { 
+  	z-index: 1;
+  }
+}
+.sfox-container {
+	@extend %left-text-container;
+	&:before {
+    background: image-url('fox.svg');
+    background-size: 100%;
+    background-position: left 200px;
+    background-repeat: no-repeat;
+  }
+}
+.emr-container {
+	@extend %right-text-container;
+	background-size: cover;
+	&:before {
+		left: 0px;
+    background: image-url('monkeys.svg');
+    background-size: auto 100%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
 }

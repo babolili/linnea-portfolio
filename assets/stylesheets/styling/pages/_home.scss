@@ -74,19 +74,24 @@
     }
   }
 }
-
-.matterhorn-container {
+%left-text-container {
   @extend %clearing-block;
   position: relative;
-  background-size: cover;
   overflow: hidden;
   padding-top: $padding-xl;
-  background: image-url('goat.svg');
-  background-position: 0px 200px;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-attachment: fixed;
-
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid $border-base-color;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 50%;
+    z-index: -1;
+  }
   .main-caption {
     @include col(5,1,$phone,9,0);
     
@@ -95,18 +100,36 @@
     }
   }
   .image-container {
-    z-index: 9;
     margin-top: $padding-xl;
     margin-left: $padding-xl;
     padding-top: $padding-xl;
-    border: 2px solid $black;
     position: relative;
-    border-radius: rem(10px);
     @include col(6,0,$phone,9,0); 
     @include omega();
+  }
+  .ghost-button {
+    @include button($salmon, $background, $salmon, white);
+  }
+  .button {
+    @include button($background, $salmon, $salmon, white);
+  }
+}
+
+.matterhorn-container {
+  @extend %left-text-container;
+  &:before {
+    width: 50%;
+    background: image-url('goat.svg');
+    background-size: 100%;
+    background-position: 0% 200px;
+    background-repeat: no-repeat;
+  }
+  .image-container {
+    border: 2px solid $salmon;
+    border-radius: rem(10px);
     img {
       margin-bottom: -5px;
-      border-top: 2px solid $black;
+      border-top: 2px solid $salmon;
       border-radius: 0 0 rem(10px) rem(10px);
     }
     &:before {
@@ -116,7 +139,7 @@
       line-height: 1;
       top: $padding-xs;
       left: $padding-xs;
-      color: $black;
+      color: $salmon;
       font-family: $sans;
       font-weight: $semibold;
     }
@@ -139,34 +162,7 @@
       text-align: center;
     }
   }
-  .ghost-button {
-    @include font($sans,rem(18px),$semibold,$salmon);
-    padding: $padding-base $padding-l;
-    display: inline-block;
-    border: 2px solid $salmon;
-    border-radius: $border-base-radius;
-    @include transition(all 0.3s ease-in-out);
-    background: $background;
-    &:hover {
-      background: darken($salmon,15%);
-      border: 2px solid darken($salmon,15%);
-      color: white;
-    }
-  }
-   .button {
-    @include font($sans,rem(18px),$semibold,$background);
-    padding: $padding-base $padding-l;
-    display: inline-block;
-    margin-top: $padding-s;
-    background: $salmon;
-    border: 2px solid $salmon;
-    border-radius: $border-base-radius;
-    @include transition(all 0.3s ease-in-out);
-    &:hover {
-      background: darken($salmon,15%);
-      border: 2px solid darken($salmon,15%);
-    }
-   }
+  
 }
 
 .white-about-container {
