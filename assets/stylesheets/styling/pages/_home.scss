@@ -87,15 +87,6 @@
   background-size: 50%;
   background-attachment: fixed;
 
-  .goat {
-    opacity: 0.6;
-    text-align: center;
-    @include col(4,0,$phone,9,0);
-    &.right {
-      @include transform(rotateY(180deg));
-      @include omega();
-    }
-  }
   .main-caption {
     @include col(5,1,$phone,9,0);
     

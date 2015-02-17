@@ -31,8 +31,4 @@ class App < Sinatra::Base
   get "/contact" do
     erb :contact
   end
-
-  get "/blog" do
-    erb :blog
-  end
 end

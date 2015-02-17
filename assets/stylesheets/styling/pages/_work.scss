@@ -1,0 +1,15 @@
+.work-container {
+	padding-top: $padding-xl*2;
+	height: 100%;
+	> div {
+	}
+	.matterhorn-container {
+		.main-caption {
+			padding-top: $padding-xl*2;
+		}
+	}
+}
+.ubiquity-container {
+	@extend %clearing-block;
+	background: white;
+}
