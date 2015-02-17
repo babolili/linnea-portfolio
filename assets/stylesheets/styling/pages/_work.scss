@@ -11,6 +11,47 @@
 	}
 }
 
+%left-text-container {
+  @extend %clearing-block;
+  position: relative;
+  overflow: hidden;
+  padding-top: $padding-xl;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid $border-base-color;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 50%;
+    z-index: -1;
+  }
+  .main-caption {
+    @include col(5,1,$phone,9,0);
+    
+    p {
+      padding-bottom: $padding-base;
+    }
+  }
+  .image-container {
+    margin-top: $padding-xl;
+    margin-left: $padding-xl;
+    padding-top: $padding-xl;
+    position: relative;
+    @include col(6,0,$phone,9,0); 
+    @include omega();
+  }
+  .ghost-button {
+    @include button($salmon, $background, $salmon, white);
+  }
+  .button {
+    @include button($background, $salmon, $salmon, white);
+  }
+}
+
 %right-text-container {
 	@extend %clearing-block;
 	position: relative;
@@ -49,6 +90,57 @@
 		}
 	}
 }
+
+.matterhorn-container {
+  @extend %left-text-container;
+  &:before {
+    width: 50%;
+    background: image-url('goat.svg');
+    background-size: 100%;
+    background-position: 0% 200px;
+    background-repeat: no-repeat;
+  }
+  .image-container {
+    border: 2px solid $salmon;
+    border-radius: rem(10px);
+    img {
+      margin-bottom: -5px;
+      border-top: 2px solid $salmon;
+      border-radius: 0 0 rem(10px) rem(10px);
+    }
+    &:before {
+      position: absolute;
+      content: '○ ○ ○';
+      font-size: rem(18px);
+      line-height: 1;
+      top: $padding-xs;
+      left: $padding-xs;
+      color: $salmon;
+      font-family: $sans;
+      font-weight: $semibold;
+    }
+
+    &:after {
+      content: 'Product Design';
+      display: block;
+      background: $salmon;
+      width: rem(100px);
+      height: rem(100px);
+      position: absolute;
+      top: 0px;
+      right: $padding-base;
+      @include transform(translateY(-50%));
+      border-radius: 50%;
+      padding-top: rem(50px) - rem(18px);
+      line-height: 1;
+      box-sizing: border-box;
+      @include font($script,rem(18px),$semibold,white);
+      text-align: center;
+    }
+  }
+  
+}
+
 .ubiquity-container {
 	@extend %right-text-container;
   &:before {
@@ -82,4 +174,60 @@
     background-position: bottom right;
     background-repeat: no-repeat;
   }
+}
+.cards-container {
+	@extend %clearing-block;
+	padding: $padding-xl 0;
+	.work-cards {
+		@include outer-container;
+		padding: 0 $padding-l;
+		> li {
+			background: white;
+			@include col(4,0,$tablet,9,0);
+			height: 300px;
+			position: relative;
+			overflow: hidden;
+			.caption {
+				@include position(absolute, 0px 0px 0px 0px);
+				background-color: rgba($salmon,0.6);
+				padding: $padding-xl*2 $padding-xl;
+				h1,h2 {
+					color: white;
+				}
+				h1 {
+					padding-bottom: $padding-base;
+					font-size: rem(40px);
+				}
+				h2 {
+					font-size: rem(27px);
+				}
+				@include transition(all 0.2s ease-in-out);
+				.ghost-button {
+					@include font($sans,rem(24px),$font-black,white);
+					margin-top: $padding-base;
+					display: block;
+					visibility: hidden;
+					opacity: 0;
+					@include transition(opacity 0.3s ease-in-out);
+					&:after {
+						content: '...';
+					}
+				}
+				&:hover {
+					background-color: rgba($salmon,0.85);
+					.ghost-button {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+			&.tottenham {
+				background: image-url('tottenham.jpg');
+				background-size: cover;
+			}
+			&.metatrails {
+				background: image-url('');
+			}
+		}
+	}
 }

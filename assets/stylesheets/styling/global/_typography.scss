@@ -38,7 +38,7 @@ h4,h5 {
 }
 
 h1 {
-  @include font($sans,rem(60px),$light,$black);
+  @include font($sans,rem(60px),$bold,$black);
   line-height: 0.8;
 }
 
