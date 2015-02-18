@@ -170,6 +170,9 @@
 		background-size: 80%;
 	  background-repeat: no-repeat;
 	  z-index: -1;
+	  @include media($big-tablet) {
+	  	background-size: auto 110%;
+	  }
   }
   > div { 
   	z-index: 1;
