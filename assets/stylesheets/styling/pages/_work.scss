@@ -55,7 +55,7 @@
 %right-text-container {
 	@extend %clearing-block;
 	position: relative;
-	background: rgba($salmon,0.8);
+	background: rgba($salmon,0.3);
 	border-bottom: 1px solid $border-base-color;
 	z-index: 1;
 	&:before {
@@ -67,16 +67,36 @@
 		bottom: 0px;
 		z-index: -1;
 	}
-	.image-container {
-		@include col(6,0,$phone,9,0);
-	}
 	.main-caption {
-		@include col(6,0,$phone,9,0);
-		@include omega();
+		@include col(6,6,$big-tablet,8,2);
 		padding: $padding-xl $padding-l;
 		margin-top: $padding-xl*2;
 		margin-bottom: $padding-xl*2;
 		background: rgba($salmon,0.8);
+		text-align: right;
+		position: relative;
+		.image {
+			@include media($min-big-tablet) {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				bottom: 0px;
+				@include transform(translateX(-100%));
+				img {
+					height: 100%;
+				}
+			}
+			@include media($big-tablet) {
+				 img {
+				 	padding-bottom: $padding-base*2;
+				 }
+			}
+		}
+		> div {
+			display: inline-block;
+			text-align: left;
+		}
+
 		h1, h2, p {
 			color: white;
 		}

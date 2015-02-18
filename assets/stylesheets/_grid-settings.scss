@@ -27,6 +27,8 @@ $grid-columns: 12;
 $max-width: em(1400);
 $visual-grid: false;
 
+$min-big-tablet: new-breakpoint(min-width 991px 12);
+
 // Define your breakpoints
 $ipad: new-breakpoint(max-width 1180px 12);
 $big-tablet: new-breakpoint(max-width 991px 12);
