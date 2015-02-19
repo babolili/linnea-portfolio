@@ -140,23 +140,23 @@
       font-weight: $semibold;
     }
 
-    &:after {
-      content: 'Product Design';
-      display: block;
-      background: $salmon;
-      width: rem(100px);
-      height: rem(100px);
-      position: absolute;
-      top: 0px;
-      right: $padding-base;
-      @include transform(translateY(-50%));
-      border-radius: 50%;
-      padding-top: rem(50px) - rem(18px);
-      line-height: 1;
-      box-sizing: border-box;
-      @include font($script,rem(18px),$semibold,white);
-      text-align: center;
-    }
+    // &:after {
+    //   content: 'Product Design';
+    //   display: block;
+    //   background: $salmon;
+    //   width: rem(100px);
+    //   height: rem(100px);
+    //   position: absolute;
+    //   top: 0px;
+    //   right: $padding-base;
+    //   @include transform(translateY(-50%));
+    //   border-radius: 50%;
+    //   padding-top: rem(50px) - rem(18px);
+    //   line-height: 1;
+    //   box-sizing: border-box;
+    //   @include font($script,rem(18px),$semibold,white);
+    //   text-align: center;
+    // }
   }
   
 }
@@ -237,7 +237,7 @@
 				}
 				h1 {
 					padding-bottom: $padding-base;
-					font-size: rem(40px);
+					font-size: rem(48px);
 				}
 				h2 {
 					font-size: rem(27px);
