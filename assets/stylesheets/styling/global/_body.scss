@@ -3,6 +3,9 @@ body {
 }
 .container {
   @include outer-container;
+  @include media($large-phone) {
+    padding: 0 $padding-l;
+  }
 }
 .main-container {
   @include outer-container;

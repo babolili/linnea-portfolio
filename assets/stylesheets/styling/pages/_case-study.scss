@@ -1,0 +1,62 @@
+.case-study-container {
+  padding-top: $padding-xl*2;
+  height: 100%;
+  .case-study-title {
+    .image {
+      @include col(4,0,$big-tablet,2,0);
+      &.right {
+        @include transform(rotateY(180deg));
+      }
+      @include media($big-tablet) {
+        @include simple-col(6,3);
+        &.right {
+          display: none;
+        }
+      }
+      @include media($large-phone) {
+        @include simple-col(8,2);
+      }
+    }
+    .text {
+      @include col(4,0,$big-tablet,8,0);
+      padding-top: $padding-xl;
+      text-align: center;
+      h1 {
+        @include media($min-big-tablet) {
+          font-size: rem(80px);
+        }
+      }
+      @include media($big-tablet) {
+        @include simple-col(8,2);
+      }
+      @include media($large-phone) {
+        @include simple-col(10,1);
+      }
+    }
+  }
+  .case-study-intro {
+    @extend %clearing-block;
+    padding-bottom: $padding-xl;
+  }
+  .case-study-detail {
+    @include col(3,0,$big-tablet,10,1);
+    margin-top: $padding-xl + $padding-s;
+    text-align: right;
+    padding-right: $padding-xl;
+    border-right: 1px solid $border-base-color;
+    opacity: 0.8;
+    .skill-list {
+      li {
+        padding-bottom: $padding-xs;
+        @include font($serif,15px,$regular,$text-body-color);
+      }
+    }
+  }
+  .case-study-body {
+    @include col(7,0,$big-tablet,10,1);
+    padding-top: $padding-base;
+  }
+  .big-showcase {
+    @include col(6,0,$large-phone,10,1);
+  }
+}

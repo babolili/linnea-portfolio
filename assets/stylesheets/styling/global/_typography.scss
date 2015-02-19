@@ -1,3 +1,15 @@
+html {
+  font-size: 16px;
+  @include media($small-screen) {
+    font-size: 15px;
+  }
+  @include media($big-tablet) {
+    font-size: 14px;
+  }
+  @include media($large-phone) {
+    font-size: 13px;
+  }
+}
 @import url(http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic|Pacifico|Raleway:600,700,400,300);
 
 $thin: 100;
@@ -39,7 +51,7 @@ h4,h5 {
 
 h1 {
   @include font($sans,rem(60px),$bold,$black);
-  line-height: 0.8;
+  line-height: 0.85;
 }
 
 h2 {
@@ -47,11 +59,38 @@ h2 {
 }
 
 h3 {
+  @include font($serif,rem(27px),$regular,$text-body-color);
+  font-style: italic;
+}
 
+blockquote {
+  padding-top: $padding-xl;
+  padding-bottom: $padding-l;
+  margin-top: $padding-l;
+  margin-bottom: $padding-l;
+  position: relative;
+  &:before {
+    position: absolute;
+    top: $padding-xs;
+    width: 40%;
+    height: 6px;
+    background: $salmon;
+    content: '';
+    display: block;
+  }
+  &:after {
+    position: absolute;
+    bottom: $padding-xs;
+    width: 40%;
+    height: 6px;
+    background: $salmon;
+    content: '';
+    display: block;
+  }
 }
 
 h4 {
-
+  @include font($sans,rem(21px),$semibold,$salmon);
 }
 
 h5 {
@@ -60,6 +99,7 @@ h5 {
 
 p {
   @include font($serif,rem(20px),$regular,$text-body-color);
+  line-height: 1.8;
 }
 
 blockquote {
