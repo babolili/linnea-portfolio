@@ -18,7 +18,6 @@
   padding-top: $padding-xl;
   position: relative;
   z-index: 1;
-  border-bottom: 1px solid $border-base-color;
   &:before {
     content: '';
     display: block;
@@ -56,7 +55,6 @@
 	@extend %clearing-block;
 	position: relative;
 	background: rgba($salmon,0.3);
-	border-bottom: 1px solid $border-base-color;
 	z-index: 1;
 	&:before {
 		content: '';
