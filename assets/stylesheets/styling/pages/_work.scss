@@ -63,6 +63,88 @@
     }
   }
 }
+%alt-right-container {
+	@extend %clearing-block;
+	position: relative;
+	background: rgba($salmon,0.6);
+	z-index: 1;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+		z-index: -1;
+	}
+	.main-caption {
+		@include col(6,6,$big-tablet,8,2);
+		padding: $padding-xl $padding-xl $padding-xl $padding-l;
+		margin-top: $padding-xl*2;
+		margin-bottom: $padding-xl*2;
+		background: rgba($salmon,0.8);
+		text-align: right;
+		position: relative;
+    height: rem(300px);
+    @include media($big-tablet) {
+      height: auto;
+    }
+    @include media($large-phone) {
+      @include simple-col(12,0);
+    }
+		.image {
+			@include media($min-big-tablet) {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				bottom: 0px;
+				@include transform(translateX(-100%));
+				img {
+					height: 100%;
+				}
+			}
+      &:after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: '';
+        display: block;
+        background: rgba(247, 215, 206, 0.3);
+        @include transition(all 0.3s ease-in-out);
+      }
+      &:hover:after {
+        background: rgba(247, 215, 206, 0);
+      }
+			@include media($big-tablet) {
+        &:after {
+          background: transparent;
+          border: 0px;
+        }
+				 img {
+				 	padding-bottom: $padding-base*2;
+				 }
+			}
+		}
+		> div {
+			display: inline-block;
+			text-align: left;
+		}
+
+		h1, h2, p {
+			color: white;
+		}
+	}
+	.ghost-button {
+		@include button(white, $salmon, white, $salmon);
+		margin-top: $padding-base;
+		&:hover {
+			background-color: white;
+			border-color: white;
+		}
+	}
+}
 
 %right-text-container {
 	@extend %clearing-block;
@@ -156,27 +238,8 @@
     background-repeat: no-repeat;
   }
   .image-container {
-    border: 2px solid $salmon;
-    background: $background;
-    border-radius: rem(10px);
-    img {
-      margin-bottom: -5px;
-      border-top: 2px solid $salmon;
-      border-radius: 0 0 rem(10px) rem(10px);
-    }
-    &:before {
-      position: absolute;
-      content: '○ ○ ○';
-      font-size: rem(18px);
-      line-height: 1;
-      top: $padding-xs;
-      left: $padding-xs;
-      color: $salmon;
-      font-family: $sans;
-      font-weight: $semibold;
-    }
+  	padding-right: $padding-xl;
   }
-
 }
 
 .ubiquity-container {

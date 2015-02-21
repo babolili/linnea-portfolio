@@ -6,6 +6,27 @@ header {
   right: 0px;
   left: 0px;
   border-bottom: 1px solid $background;
+  .logo {
+    background: lighten($salmon,10%) image-url('logo.svg') no-repeat;
+    background-size: auto 80%;
+    background-position: 45% center;
+    height: rem(80px);
+    width: rem(80px);
+    border-radius: 50%;
+    position: absolute;
+    left: rem(80px);
+    @include transition(all 1s ease-in-out);
+    visibility: hidden;
+    opacity: 0;
+    &:hover {
+      background-color: darken($salmon, 15%);
+      @include transform(rotate(180deg));
+    }
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
   .bubble-nav {
     text-align: right;
     @include outer-container;
