@@ -68,159 +68,47 @@
 	position: relative;
 	background: rgba($salmon,0.6);
 	z-index: 1;
-	&:before {
-		content: '';
-		display: block;
-		position: absolute;
-		right: 0px;
-		top: 0px;
-		bottom: 0px;
-		z-index: -1;
-	}
+	display: flex;
+	align-items: stretch;
 	.main-caption {
-		@include col(6,6,$big-tablet,8,2);
-		padding: $padding-xl $padding-xl $padding-xl $padding-l;
+		@include col(6,0,$big-tablet,8,2);
+		padding: $padding-xl $padding-xl 0 $padding-l;
 		margin-top: $padding-xl*2;
-		margin-bottom: $padding-xl*2;
-		background: rgba($salmon,0.8);
-		text-align: right;
 		position: relative;
-    height: rem(300px);
-    @include media($big-tablet) {
-      height: auto;
-    }
     @include media($large-phone) {
       @include simple-col(12,0);
     }
-		.image {
-			@include media($min-big-tablet) {
-				position: absolute;
-				left: 0px;
-				top: 0px;
-				bottom: 0px;
-				@include transform(translateX(-100%));
-				img {
-					height: 100%;
-				}
-			}
-      &:after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        content: '';
-        display: block;
-        background: rgba(247, 215, 206, 0.3);
-        @include transition(all 0.3s ease-in-out);
-      }
-      &:hover:after {
-        background: rgba(247, 215, 206, 0);
-      }
-			@include media($big-tablet) {
-        &:after {
-          background: transparent;
-          border: 0px;
-        }
-				 img {
-				 	padding-bottom: $padding-base*2;
-				 }
-			}
-		}
-		> div {
-			display: inline-block;
-			text-align: left;
-		}
-
 		h1, h2, p {
 			color: white;
 		}
 	}
-	.ghost-button {
-		@include button(white, $salmon, white, $salmon);
-		margin-top: $padding-base;
-		&:hover {
-			background-color: white;
-			border-color: white;
-		}
-	}
-}
-
-%right-text-container {
-	@extend %clearing-block;
-	position: relative;
-	background: rgba($salmon,0.3);
-	z-index: 1;
-	&:before {
-		content: '';
+	.image-container {
+		@include col(6,0,$big-tablet,8,2);
 		display: block;
-		position: absolute;
-		right: 0px;
-		top: 0px;
-		bottom: 0px;
-		z-index: -1;
-	}
-	.main-caption {
-		@include col(6,6,$big-tablet,8,2);
-		padding: $padding-xl $padding-xl $padding-xl $padding-l;
-		margin-top: $padding-xl*2;
-		margin-bottom: $padding-xl*2;
-		background: rgba($salmon,0.8);
-		text-align: right;
 		position: relative;
-    height: rem(300px);
-    @include media($big-tablet) {
-      height: auto;
-    }
-    @include media($large-phone) {
+		overflow: hidden;
+		img {
+			margin-bottom: -5px;
+		}
+		@include media($large-phone) {
       @include simple-col(12,0);
     }
-		.image {
-			@include media($min-big-tablet) {
-				position: absolute;
-				left: 0px;
-				top: 0px;
-				bottom: 0px;
-				@include transform(translateX(-100%));
-				img {
-					height: 100%;
-				}
-			}
-      &:after {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        content: '';
-        display: block;
-        background: rgba(247, 215, 206, 0.3);
-        @include transition(all 0.3s ease-in-out);
-      }
-      &:hover:after {
-        background: rgba(247, 215, 206, 0);
-      }
-			@include media($big-tablet) {
-        &:after {
-          background: transparent;
-          border: 0px;
-        }
-				 img {
-				 	padding-bottom: $padding-base*2;
-				 }
-			}
-		}
-		> div {
-			display: inline-block;
-			text-align: left;
-		}
-
-		h1, h2, p {
-			color: white;
-		}
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '';
+      display: block;
+      @include transition(all 0.3s ease-in-out);
+    }
+    &:hover:after {
+      background: rgba(247, 215, 206, 0.3);
+    }
 	}
 	.ghost-button {
-		@include button(white, $salmon, white, $salmon);
+		@include button(white, lighten($salmon,5%), white, $salmon);
 		margin-top: $padding-base;
 		&:hover {
 			background-color: white;
@@ -242,37 +130,6 @@
   }
 }
 
-.ubiquity-container {
-	@extend %right-text-container;
-  &:before {
-  	left: 0px;
-		background: image-url('book.svg');
-		background-position: center 0px;
-		background-size: 80%;
-	  background-repeat: no-repeat;
-	  z-index: -1;
-	  @include media($big-tablet) {
-	  	background-size: auto 110%;
-	  }
-  }
-  > div {
-  	z-index: 1;
-  }
-}
-.ubiquity-journals-container {
-	@extend %right-text-container;
-  &:before {
-  	left: 0px;
-		background: image-url('typewriter.svg');
-		background-position: center 0px;
-		background-size: auto 120%;
-	  background-repeat: no-repeat;
-	  z-index: -1;
-  }
-  > div {
-  	z-index: 1;
-  }
-}
 .sfox-container {
 	@extend %left-text-container;
 	&:before {
@@ -282,16 +139,36 @@
     background-repeat: no-repeat;
   }
 }
+
+.ubiquity-container, .ubiquity-journals-container, .emr-container {
+	@extend %alt-right-container;
+}
+
+.ubiquity-container {
+	background-color: $blue;
+	.image-container:hover:after {
+		background-color: rgba($blue,0.3);
+	}
+	.ghost-button {
+		@include button(white, $blue, white, $blue);
+		&:hover {
+			background-color: white;
+			border-color: white;
+		}
+	}
+}
 .emr-container {
-	@extend %right-text-container;
-	background-size: cover;
-	&:before {
-		left: 0px;
-    background: image-url('monkeys.svg');
-    background-size: auto 100%;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-  }
+	background-color: $green;
+	.image-container:hover:after {
+		background-color: rgba($green,0.3);
+	}
+	.ghost-button {
+		@include button(white, $green, white, $green);
+		&:hover {
+			background-color: white;
+			border-color: white;
+		}
+	}
 }
 .cards-container {
 	@extend %clearing-block;
