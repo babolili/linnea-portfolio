@@ -51,7 +51,7 @@
     padding: $padding-xl;
 
     .image {
-      @include col(6,0,$big-tablet,2,0);
+      @include col(5,0,$big-tablet,2,0);
       text-align: right;
       img {
         max-height: 400px;
@@ -64,7 +64,7 @@
       }
     }
     .text {
-      @include col(5,0,$big-tablet,8,0);
+      @include col(6,0,$big-tablet,8,0);
       padding: $padding-xl;
       h1 {
         @include media($min-big-tablet) {
