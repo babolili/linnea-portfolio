@@ -1,7 +1,7 @@
 .work-container {
 	padding-top: $padding-xl*2;
 	height: 100%;
-	> div {
+	.matterhorn-container, .sfox-container {
 		min-height: 60%;
     @include media($min-max-width) {
       min-height: 50%;
