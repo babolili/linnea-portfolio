@@ -84,7 +84,6 @@
   }
   .case-study-intro {
     @extend %clearing-block;
-    @include outer-container;
     padding-bottom: $padding-xl;
     .case-study-side {
       @include col(3,0,$big-tablet,10,1);
