@@ -248,4 +248,7 @@
   &.up-portals {
     @include case-study-colour($blue);
   }
+  &.matterhorn {
+    @include case-study-colour($matterhorn);
+  }
 }
