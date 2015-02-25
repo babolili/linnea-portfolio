@@ -43,6 +43,18 @@ b {
     color: white;
   }
 }
+%link-styling {
+  h1, h2, h3, h4, h5, h6, p {
+    a {
+      font-style: italic;
+      color: $salmon;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        border-bottom: 1px solid $salmon;
+      }
+    }
+  }
+}
 
 
 h4,h5 {
@@ -64,8 +76,7 @@ h3 {
 }
 
 blockquote {
-  padding-top: $padding-xl;
-  padding-bottom: $padding-l;
+  padding-bottom: $padding-xl;
   position: relative;
 }
 
@@ -74,7 +85,7 @@ h4 {
 }
 
 h5 {
-  @include font($script,rem(100px),$light,$black);
+  @include font($sans,rem(50px),$bold,$black);
 }
 
 p {

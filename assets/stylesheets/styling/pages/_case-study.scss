@@ -1,3 +1,47 @@
+%case-study-typography {
+  p {
+    padding-bottom: $padding-xl;
+  }
+  h5 {
+    padding-top: $padding-xs;
+    padding-bottom: $padding-xl;
+  }
+  img {
+    margin-bottom: $padding-xl;
+  }
+  ul {
+    li {
+      @extend p;
+      line-height: 1.5;
+      padding-left: $padding-l;
+      position: relative;
+      padding-bottom: $padding-base;
+      &:before {
+        content: '•';
+        color: $salmon;
+        position: absolute;
+        left: 0px;
+      }
+    }
+  }
+  ol {
+    counter-reset: section;
+    li {
+      @extend p;
+      line-height: 1.5;
+      padding-left: $padding-xl;
+      position: relative;
+      padding-bottom: $padding-base;
+      &:before {
+        counter-increment: section;
+        content: counters(section,".")".";
+        color: $salmon;
+        position: absolute;
+        left: 0px;
+      }
+    }
+  }
+}
 .case-study-container {
   padding-top: $padding-xl*2;
   height: 100%;
@@ -5,6 +49,7 @@
   .case-study-title {
     @extend %clearing-block;
     padding: $padding-xl;
+
     .image {
       @include col(6,0,$big-tablet,2,0);
       text-align: right;
@@ -26,6 +71,9 @@
           font-size: rem(80px);
         }
       }
+      h2 {
+        padding-bottom: $padding-base;
+      }
       @include media($big-tablet) {
         @include simple-col(8,2);
       }
@@ -36,43 +84,169 @@
   }
   .case-study-intro {
     @extend %clearing-block;
+    @include outer-container;
     padding-bottom: $padding-xl;
-  }
-  .case-study-detail {
-    @include col(2,1,$big-tablet,10,1);
-    margin-top: $padding-xl + $padding-s;
-    text-align: right;
-    padding: $padding-xl $padding-xl;
-    background: white;
-    opacity: 0.8;
-    .skill-list {
-      li {
-        padding-bottom: $padding-xs;
-        @include font($serif,15px,$regular,$text-body-color);
-      }
+    .case-study-side {
+      @include col(3,0,$big-tablet,10,1);
+      margin-top: $padding-xl + $padding-s;
     }
-    @include media($big-tablet) {
-      text-align: left;
-      li {
-        display: inline-block;
-        &:after {
-          content: ',';
-          padding-right: $padding-xs;
+    .case-study-detail {
+      @include col(3,0,$big-tablet,10,1);
+      margin-top: $padding-xl + $padding-s;
+      text-align: right;
+      padding: $padding-xl $padding-xl;
+      background: white;
+      opacity: 0.8;
+      .skill-list {
+        li {
+          padding-bottom: $padding-xs;
+          @include font($serif,15px,$regular,$text-body-color);
+        }
+      }
+      @include media($big-tablet) {
+        text-align: left;
+        li {
+          display: inline-block;
+          &:after {
+            content: ',';
+            padding-right: $padding-xs;
+          }
         }
       }
     }
+    .case-study-body {
+      @include col(7,0,$big-tablet,10,1);
+      padding-top: $padding-xl;
+    }
   }
+
   .case-study-body {
-    @include col(7,0,$big-tablet,10,1);
+    @extend %link-styling;
+    @extend %case-study-typography;
+    @include col(7,3,$big-tablet,10,1);
     padding-top: $padding-base;
+
+    .problem-row {
+      display: flex;
+      align-items: stretch;
+      margin-bottom: $padding-l;
+      @include media($tablet) {
+        display: block;
+        > div {
+          margin-bottom: $padding-s;
+        }
+      }
+      p {
+        line-height: 1.5;
+      }
+      h3 {
+        font-family: $script;
+        font-size: rem(40px);
+      }
+
+      > div {
+        @include col(6,0,$tablet,12,0);
+        @include omega(2n);
+        padding: $padding-xl;
+        background: $salmon;
+        @extend %white-fonts;
+      }
+    }
+  }
+  .showcase {
+    background: white;
+    padding: $padding-xl;
+    @extend %clearing-block;
+    img {
+      border: 1px solid $border-base-color;
+    }
+    h2 {
+      padding-bottom: $padding-base;
+    }
+    .responsive {
+      text-align: center;
+      img {
+        max-height: 250px;
+        max-width: 50%;
+        border-color: transparent;
+      }
+    }
+
+  }
+  .third {
+    @include col(4,0,$large-phone,10,1);
+  }
+  .fifth {
+    @include col(2,0,$large-phone,4,0);
+    text-align: center;
+    &:first-child {
+      @include shift(1);
+    }
+    h1 {
+      padding-bottom: $padding-base;
+    }
   }
   .big-showcase {
     @include col(6,0,$large-phone,10,1);
+    @include omega(2n);
+  }
+  .third-showcase {
+    @include col(4,0,$large-phone,10,1);
+  }
+
+  .image-row {
+    @extend %clearing-block;
+    img {
+      border: 1px solid $border-base-color;
+    }
+    > div {
+      position: relative;
+    }
+  }
+  .twitter-card {
+    @include col(8,2,$big-tablet,10,1);
+  }
+  .center-row {
+    @extend %clearing-block;
+    text-align: center;
+  }
+  .image-caption {
+    @include position(absolute, 0px 0px 0px 0px);
+    h2 {
+      color: white;
+      position: absolute;
+      font-weight: $bold;
+      @extend %absolute-center;
+    }
+    opacity: 0;
+    @include transition(opacity 0.3s ease-in);
+    &:hover {
+      opacity: 1;
+    }
+  }
+  @mixin case-study-colour($color) {
+    .case-study-title {
+      background: rgba($color,0.6);
+      @extend %white-fonts;
+      .ghost-button {
+        @include button(white, rgba($color,0.6), white, rgba($color,0.6));
+        &:hover {
+          background: white;
+          border-color: white;
+        }
+      }
+    }
+    .problem-row > div {
+      background: rgba($color,0.7);
+    }
+    .image-caption {
+      background-color: rgba($color,0.8);
+    }
   }
   &.up-journals {
-    .case-study-title {
-      background: rgba($salmon,0.6);
-      @extend %white-fonts;
-    }
+    @include case-study-colour($salmon);
+  }
+  &.up-portals {
+    @include case-study-colour($blue);
   }
 }

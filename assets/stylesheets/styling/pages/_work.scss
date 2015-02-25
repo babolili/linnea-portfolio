@@ -102,9 +102,10 @@
       content: '';
       display: block;
       @include transition(all 0.3s ease-in-out);
+      background: rgba(247, 215, 206, 0.4);
     }
     &:hover:after {
-      background: rgba(247, 215, 206, 0.3);
+      background: rgba(247, 215, 206, 0);
     }
 	}
 	.ghost-button {
@@ -146,7 +147,7 @@
 
 .ubiquity-container {
 	background-color: $blue;
-	.image-container:hover:after {
+	.image-container:after {
 		background-color: rgba($blue,0.3);
 	}
 	.ghost-button {
@@ -159,7 +160,7 @@
 }
 .emr-container {
 	background-color: $green;
-	.image-container:hover:after {
+	.image-container:after {
 		background-color: rgba($green,0.3);
 	}
 	.ghost-button {
