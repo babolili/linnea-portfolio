@@ -251,4 +251,10 @@
   &.matterhorn {
     @include case-study-colour($matterhorn);
   }
+  &.serious-fox {
+    @include case-study-colour($orange);
+  }
+  &.evolve-my-retirement {
+    @include case-study-colour($green);
+  }
 }
