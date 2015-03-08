@@ -2,3 +2,5 @@
 //= require libs/jquery.min
 //= require libs/underscore-min
 //= require libs/waypoints
+//= require libs/featherlight
+

@@ -170,7 +170,6 @@
         border-color: transparent;
       }
     }
-
   }
   .third {
     @include col(4,0,$large-phone,10,1);
@@ -223,6 +222,28 @@
       opacity: 1;
     }
   }
+  .zoom-caption {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    &:after {
+      @extend %absolute-center;
+      text-align: center;
+      font-family: "fontawesome";
+      content: $fa-var-expand;
+      background-color: rgba($salmon,0.8); 
+      color: white;
+      font-size: rem(80px);
+      @include transition(opacity 0.2s ease-in-out);
+      opacity: 0;
+      padding: $padding-xl $padding-xl+$padding-xs;
+      border-radius: 50%;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
   @mixin case-study-colour($color) {
     .case-study-title {
       background: rgba($color,0.6);
@@ -240,6 +261,9 @@
     }
     .image-caption {
       background-color: rgba($color,0.8);
+    }
+    .zoom-caption:after {
+      background-color: rgba($color,0.8); 
     }
   }
   &.up-journals {
