@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The SMaaS project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Short Messaging as a service: converting online software into SMS-based services">
+    <meta name="author" content="Linnea Strid">
+    
+    <link rel="canonical" href="http://smaasproject.com/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/application-6953f756de4c56353883c05d5630e0ee.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://localhost:35729/livereload.js"></script>
+    <!-- Fonts -->
+ 
+    
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The SMaaS project">
+    <meta property="og:description" content="Short Messaging as a service: converting online software into SMS-based services">
+    <meta property="og:url" content="http://smaasproject.com/">
+    <meta property="og:site_name" content="The SMaaS project">
+
+    <meta name="twitter:card" content="summary">
+    
+        <meta name="twitter:creator" content="@seriousfoxhq">
+    
+
+    
+      <meta name="twitter:title" content="The SMaaS project">
+    
+    
+      <meta name="twitter:url" content="http://smaasproject.com/">
+    
+    
+      <meta name="twitter:description" content="Short Messaging as a service: converting online software into SMS-based services">
+    
+    
+      <meta name="twitter:image:src" content="http://smaasproject.com/path/to/image/logo.png">
+    
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+</head>
+
+<body>
+	<header>
+  <a href="#top" data-scroll="#top" class="logo scroll-link">
+    
+  </a>
+  <div class="nav-button">
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li> 
+  </div>
+  <div class="bubble-nav">
+    <li>
+      <a href="#problem-definition" data-scroll="#problem-definition" class="scroll-link">
+        Defining the Problem
+      </a>
+    </li>
+    <li>
+      <a href="#smaas" data-scroll="#smaas" class="scroll-link">
+        What is SMaaS?
+      </a>
+    </li>
+    <li>
+      <a href="#the-designs" data-scroll="#the-designs"  class="scroll-link">
+        The Designs
+      </a>
+    </li>
+    <li>
+      <a href="#contribute" data-scroll="#contribute"  class="scroll-link">
+        Contribute
+      </a>
+    </li>
+  </div>
+</header>
+	<div class="navbar-offset">
+		<div class="home">
+  <div class="intro-hero" id="top">
+    <div class="container">
+      <div class="text">
+        <h3>Can we solve</h3>
+        <h1>
+          Techno-Inequality?
+        </h1>
+        <h3>
+          The difference in opportunity between those who <span class="red">have</span> access to technology, and those who <span class="red">do not</span>.
+        </h3>
+        <p>
+          As with any inequality, technological inequality affects all aspects of life. Your ability to find a job, to receive an education, to change your current socioeconomic situation - they are all intrinsically affected by the technologies you have access to.
+        </p>
+        <h3>
+          This is especially true for computer, smartphone & internet access.
+        </h3>
+        <p>
+           <a href="http://www.econstor.eu/bitstream/10419/30590/1/615363539.pdf">A study from 2007</a> found that "a 10 percentage-point increase in broadband penetration raises annual per-capita growth by 0.9-1.5 percentage points".
+        </p>
+        <p>
+          There are many variables for why the internet is a driving force for economic development, but arguably one key aspect is that it is a portal for <i>easily accessible software</i> that allows individuals to automate processes as well as connect with individuals they would otherwise not come in contact with. 
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="offset-scroll" id="problem-definition">
+    
+  </span>
+  <div class="red-hero">
+    <div class="container">
+      <div class="text">
+        <h2>
+          Approaching The Problem
+        </h2>
+        <h3>
+          This project proposes that there are three main causes of techno-inequality:
+        </h3>
+        <ol class="big-list">
+          <li>
+            Access to the internet is limited in parts of the world due to either infrastructure limitations or government policy
+          </li>
+          <li>
+            Not all individuals can afford a broadband or 3G/4G subscription
+          </li>
+          <li>
+            Not all individuals can afford the devices required to access the internet. 
+          </li>
+        </ol>
+        <p>
+          While the obvious approach would be to tackle one of these directly, these are very large and complex issues. 
+        </p>
+        <p>
+          You could campaign for governments to improve internet access, find a way to subsidise internet access, you could donate devices or develop cheaper ones.
+        </p>
+        <h3>
+          However all of these solutions require time and - more importantly - substantial capital. 
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="white-hero">
+    <div class="container">
+      <div class="text">
+        <h3>
+           In the absence of time and capital, we still have the ability to affect change via smaller, targeted solutions.
+        </h3>
+        <p>
+          While not a direct solution to this problem, this project proposes a small solution with the potential to make a sizable impact - a <i>microintervention.</i>
+        </p>
+        <p>
+          Instead of focusing on providing the technology itself - why not attempt to provide a more cost-effective solution with the same benefits?
+        </p>
+        <img src="/assets/phones-421c82af8ecadb5c0cd0348a2f4e93e4.png">
+        <div class="caption">
+          Mobile Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+        </div>
+        <p>
+          Older cellphones (not smartphones) are much cheaper devices, and since the technology has been around since 1983 cell tower infrastructure is widely available even in relatively poor countries. 
+        </p>
+        <p>
+          According to sources only 50% of the world's population having access to 3G or 4G networks, and a measly 9.8% of the world's population has acess to broadband. In comparison, mobile cellular penetration was almost at 100% in 2013. 
+        </p>
+        <p>
+          <b>Data Sources:</b>
+            <a href="http://www.pewglobal.org/2014/02/13/emerging-nations-embrace-internet-mobile-technology/" target="_blank">
+              Pew Global, 
+            </a>
+            <a href="http://www.worldbank.org/en/news/press-release/2012/07/17/mobile-phone-access-reaches-three-quarters-planets-population" target="_blank">
+              World Bank, 
+            </a>
+            <a href="http://www.pcmag.com/article2/0,2817,2407335,00.asp" target="_blank">
+              PCMag, 
+            </a>
+            <a href="http://techcrunch.com/2012/05/27/mobile-developing-world/" target="_blank">
+              Tech Crunch, 
+            </a>
+            <a href="http://www.deccanherald.com/content/332274/there-more-mobile-phones-people.html" target="_blank">
+              Deccan Herald, 
+            </a>
+            <a href="http://en.wikipedia.org/wiki/List_of_countries_by_number_of_broadband_Internet_subscriptions" target="_blank">
+              Wikipedia
+            </a>
+
+        </p>
+        <h3>
+          Why not use existing cellphone technology and infrastructure to create useful services that interface with the internet?
+        </h3> 
+      </div>
+    </div>
+  </div>
+  <span class="offset-scroll" id="smaas">
+    
+  </span>
+  <div class="grey-hero">
+    <div class="container">
+      <div class="text">
+        <h2>SMaaS: Short Messaging as a Service</h2>  
+        <p>
+          SMaaS is a portmanteau of two terms:
+        </p>
+        <ol>
+          <li>
+            <b>SMS:</b>
+            <br>    
+            Short Message Service: a system for sending short text messages, as from one cell phone to another or from a computer to a cell phone.
+          </li>
+          <li>
+            <b>SaaS</b>
+            <br>
+            Software as a Service (SaaS) is a software distribution model in which applications are hosted by a vendor or service provider and made available to customers over a network, typically the Internet.
+          </li>
+        </ol>
+        <p>
+          These kind of services already exist in some parts of the world, for example, <a href="http://bustime.mta.info/wiki/Help/SMSSearching" target="_blank">MTA Bus Time</a> which allows you to check when buses are arriving at a stop.
+        </p>
+        <p>
+          There's also the much hyped <a href="http://www.getmagicnow.com/">Magic</a> which you basically text to have someone act as your virtual assistant
+        </p>
+        <div class="row">
+          <div class="small-preview">
+            <img src="/assets/bus-time-fe50634cb755c8905b13238e2b8b0210.gif">  
+          </div>
+          <div class="small-preview">
+            <img src="/assets/magic-afb404f6f3e1820a4b4ffc560f2fe0d9.PNG">  
+          </div>
+          <div class="caption">
+            These wonderful examples were captured by <a href="https://twitter.com/libovness" target="_blank">Jonathan Libov</a> in his article about the <a href="http://whoo.ps/2015/02/23/futures-of-text" target="_blank">Futures of Text</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="offset-scroll" id="the-tech">
+    
+  </span>
+  <div class="twilio-hero">
+    <div class="container">
+      <div class="text">
+        <h2>
+          The Tech
+        </h2>
+        <img src="/assets/twilio-hero-952b227a7547367ff4cefdb9d5a18c55.png">
+        <p></p>
+        <div class="row">
+          <a href="https://www.twilio.com/sms" target="_blank" class="twilio-bubble">
+            <img src="/assets/twilio-logo-white-e73dd82bb7fcdacee98bf7d8bbf19a49.png">
+          </a>
+          <div class="twilio-caption">
+            <p>
+              <a href="https://www.twilio.com/sms" target="_blank">Twilio's SMS services</a> allow you to Programmatically Send, Receive & Track SMS globally from one API.
+            </p>
+          </div>
+        </div>
+        <p>
+          The other components of these services will likely have to vary from application to application. 
+        </p>
+        <p>
+          Have a suggestion about technology that would be useful to build SMaaS projects? Create a <a href="https://github.com/babolili/smaas" target="_blank">pull request</a> with your suggestion
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="offset-scroll" id="the-designs">
+    
+  </span>
+  <div class="white-hero">
+    <div class="container">
+      <div class="text">
+        <div class="posts">
+          <h1>
+            The Designs
+          </h1>
+          <p>
+            There are two main challenges of creating a SMS-based interface: 
+          </p>
+          <ol>
+            <li>
+              <b>
+               Conciseness
+              </b>
+              <br>
+              You must keep any interaction that needs to be in the same message under 160 characters
+              <br>
+            </li>
+            <li>
+              <b>
+                Instructional
+              </b>
+              <br>
+              The user needs to be able to understand how to use your service with very little guidance as the only way for them to learn how to use your service is likely to be in the service itself
+            </li>
+          </ol>
+          <p>
+            The designs below explore how these limitations affect and inform the user flow
+          </p>
+          
+            
+            <div class="post">
+              <a href="/2015/03/31/job-board/" class="post-link">
+                <img src="" alt="">
+                <h2 class="h2 post-title">A Rudimentary Job Board</h2>
+              </a>
+              <div class="post-meta">
+                <div class="post-author">
+                  <a href="https://twitter.com/babolili" target="_blank">
+                    Linnea Strid
+                  </a>
+                </div>
+                <div class="post-date">
+                  March 31, 2015
+                </div>
+              </div>
+              <div class="content">
+                <h4>Onboarding the user</h4>
+
+<p>
+  In this setup example, let&rsquo;s assume the user finds/sees an advertisement for the service, which includes the number and the instructions <em>&ldquo;Text START to Start looking for or listing a job!&rdquo;</em>
+</p>
+
+<div class="sms-row">
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      START
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      Welcome to the Job board! <br><br>
+      To list a job, reply with LISTJOB. <br><br>
+      To look for jobs reply with LOOKFORJOB <br><br>
+      For help, reply with HELP
+    </div>
+    <div class="caption">
+      131 characters
+    </div>
+  </div>
+</div>
+
+<h4 id="listing-a-job">Listing a Job</h4>
+
+<p>In an ideal setting, the job board should exist both online and via SMS. This is why the Job listing process is structured in the same way as a form, with the data that will be relevant for searchability grouped in one input.</p>
+
+<p>The 160 character limit does mean that it is difficult to not break up the process into multiple steps. However, if the user does not need to change anything in their listing, they will &ldquo;only&rdquo; send 7 SMS. </p>
+
+<p>Perhaps the solution would be to allow them to quicklist with one message, however it presents some problems in how the data would be interpreted by the database and could prevent jobseekers from filtering jobs properly.</p>
+
+<div class="sms-row">
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      LISTJOB
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      This is the first time you are listing a job. <br><br>
+      To start listing, reply with the city the job is in.
+    </div>
+    <div class="caption">
+      100 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      Achenetone
+    </div>
+  </div>  
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      You can view and change your answers at any time by replying CHANGE.
+      <br><br>
+
+      Please tell me the job title & employer name.<br><br>
+      Example: Secretary at Madison Park Hotel
+    </div>
+    <div class="caption">
+      158 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      Junior Mechanic at Johnny Road Speedy Motors
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      What is the hourly salary for this job in dollars? <br><br>
+      Example: 4.50 <br><br>
+    </div>
+    <div class="caption">
+      68 character
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      8
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      What is the minimum years of experience you require the applicant to have?
+      <br><br>
+      Example: 2
+    </div>
+    <div class="caption">
+      87 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      2
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      What phone number should applicants contact to apply?
+      <br><br>
+      Reply MINE to use the number of the phone you are using <br><br>
+      Example: 0729830940
+    </div>
+    <div class="caption">
+      133 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      MINE
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      We are sending you a message with what your job listing will look like.  <br><br>
+      To change anything reply with CHANGE. To post your listing, reply CONFIRM.
+    </div>
+    <div class="caption">
+      148 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      Junior Mechanic at Johnny Road Speedy Motors, Achenetone <br><br>
+      SLRY: $8/HR <br>
+      MIN 2YR XP <br>
+      DATE ADDED: 07/03/15 <br><br>
+      07593874028
+    </div>
+    <div class="caption">
+      97 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      CONFIRM
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      Your Job listing has been posted! Write MYLISTINGS at any time to view your listings.
+    </div>
+    <div class="caption">
+      85 characters
+    </div>
+  </div>
+</div>
+
+<h4>
+  Looking for a Job
+</h4>
+
+<p>
+  The main benefit we try to offer in this user flow is the ability to seek out jobs that are targeted to the users skills and preferences. It focuses on <i>location</i>, <i>job role</i> & <i>salary</i>
+</p>
+
+<p>
+  The system should ideally be able to smartmatch keywords even if they are not identical.
+</p>
+
+<div class="sms-row">
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      LOOKFORJOB
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      This is the first time you are using the job board<br><br>
+      List the cities or areas you want to work in, separate with commas <br><br>
+      Example: Achenetone, Mochudi, Molepole
+    </div>
+    <div class="caption">
+      159 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window">
+      Achenetone, Halifax, Grucho, Chogo, Minuti
+    </div>
+  </div>  
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      List the jobs you are looking for, separate with commas<br><br>
+
+      Example: Engineer, Mechanic, Plumber
+    </div>
+    <div class="caption">
+      93 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window ">
+      Hairdresser, Beautician, Nails, Beauty, Salon
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      What is the minimum hourly salary you are looking for (in dollars)?<br><br>
+      Example: 5.50
+    </div>
+    <div class="caption">
+      82 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window ">
+      10
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      Preferences: <br><br>
+      Hairdresser, Beautician, Nails, Beauty, Salon in Achenetone, Halifax, Grucho, Chogo, Minuti <br><br>
+      MIN SLRY: $10/HR <br><br>
+      To change, reply PREF
+    </div>
+    <div class="caption">
+      149 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      We have found 1 job matching your preferences <br><br>
+      Reply SHOW1, SHOW5, SHOW10 or SHOWALL to view listings (newest first) <br><br>
+      To change preferences, reply PREF
+    </div>
+    <div class="caption">
+      153 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>User</h5>
+    <div class="sms-window ">
+      SHOWALL
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      Junior Beautician at Jenny&rsquo;s nails in Halifax <br><br>
+      SLRY: $13/HR <br>
+      MIN 5YR XP <br>
+      DATE ADDED: 01/04/15<br><br>
+      CONTACT: 0208292832420
+    </div>
+    <div class="caption">
+      118 characters
+    </div>
+  </div>
+  <div class="small-preview">
+    <h5>Service</h5>
+    <div class="sms-window service">
+      Didn&rsquo;t find what you&rsquo;re looking for? <br><br>
+      Reply with SUBSCRIBE to receive messages as soon as matching job listings are posted
+    </div>
+    <div class="caption">
+      123 characters
+    </div>
+  </div>
+</div>
+
+<h3 id="the-user-flows-outlined-above-are-not-final,-but-present-a-groundwork-for-interesting-sms-services.">The user flows outlined above are not final, but present a groundwork for interesting SMS services.</h3>
+
+<p>What this project considers the most important is the shift in thinking - that it is possible to translate internet usefullness into the very low-fi interaction of SMS. It only requires the hosting party to have the computational power.</p>
+
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>    
+  </div>
+  <div class="pagination">
+  <div class="left">
+    
+      <span class="pagination-item disabled">Newer Posts</span>
+    
+  </div>
+  <div class="right">
+    
+      <span class="pagination-item disabled">Older Posts</span>
+    
+  </div>
+</div>
+
+  <span class="offset-scroll" id="contribute">
+    
+  </span>
+  <div class="red-hero">
+    <div class="container">
+      <div class="text">
+        <h2>Contribute</h2>
+        <h3>
+          The SmaaS project is open source and can be found <a href="https://github.com/babolili/smaas" target="_blank">here</a>
+        </h3>
+        <h4>Calling all UX Designers!</h4>
+        <p>
+          Want to take on the challenge of transforming your favourite SaaS or other online service into a SMS product? 
+        </p>
+        <p>
+          If you're comfortable with coding fork the repo and create a PR with your design suggestion as a page in the <i>_posts</i> folder. The SMaaS Project uses <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> so as long as you can use markdown you can contribute!
+        </p>
+        <p>
+          If not, feel free to <a href="mailto:stridlinnea@gmail.com">get in touch</a> with your contribution
+        </p>
+        <h4>Technical Suggestions</h4>
+        <p>
+          Got technical advice, or think you can build a product from a design in the SMaaS project? submit a pull request with notes in index.html with your tech advice or contribution or <a href="mailto:stridlinnea@gmail.com">get in touch</a> with your suggestions. 
+        </p>
+        <h4>
+          Want to make any of the ideas in here a reality?
+        </h4>
+        <p>
+          Go ahead! There is no need to ask or give any credit but I would <a href="mailto:stridlinnea@gmail.com">love to know</a> how it goes.
+        </p>
+        <div class="caption">
+          <b>Disclaimer:</b> The SMaaS project was developed as a response to <a href="http://www.hyperisland.se/" target="_blank">Hyper Island's</a> <a href="https://www.hyperisland.com/creative-task/2015equality?_ga=1.241783941.609412779.1422912409" target="_blank">Creative Task 2015</a>
+        </div>
+        <p>
+          This site was built by <a href="http://linneastrid.com/" target="_blank">Linnea</a> with <i class="fa fa-heart"></i> and <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+	
+	</div>
+</body>
+<script src="/assets/app-d012ade7424731e55163172b6c8fa265.js"></script>
+
+
+
+</html>

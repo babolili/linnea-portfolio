@@ -1,0 +1,51 @@
+# Site settings
+title:       "The SMaaS project"
+email:       stridlinnea@gmail.com"
+author:      "Linnea Strid"
+description: "Short Messaging as a service: converting online software into SMS-based services"
+url:         "http://smaasproject.com"
+
+# Authors
+authors:
+  linnea:
+    name: "Linnea Strid"
+    display_name: "Linnea Strid"
+    email: linnea@seriousfox.co.uk
+    twitter: babolili
+    avatar: "/images/team/linnea.png"
+    active: ""
+
+# Google analytics
+# google_analytics: UA-44214769-6
+
+# Optional features
+animated:           false
+show_related_posts: true
+show_post_footers:  true
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname:
+
+# Social icons
+
+show_social_icons: true
+github_username: babolili
+stackoverflow_id:
+twitter_username: babolili
+
+google_plus_id:
+linkedin_username:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Build settings
+markdown:     redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    pretty
+paginate:     10
+sass:
+  compressed: true
+

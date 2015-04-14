@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+  {% include navigation.html %}
+  <div class="navbar-offset">
+    <div class="container post-container">
+      <div class="text">
+        {% assign minutes = content | number_of_words | divided_by: 180 %}
+        {% if minutes == 0 %}
+        {% assign minutes = 1 %}
+        {% endif %}
+        {% assign author = site.authors[page.author] %}
+
+        <div class="post-header">
+          <h1>{{ page.title }}</h1>
+          <div class="post-meta">
+            <div class="post-author">
+              <a href="https://twitter.com/{{ author.twitter }}" target="_blank">
+                {{ author.display_name }}
+              </a>
+            </div>
+            <div class="post-date">
+              {{ page.date | date: "%B %-d, %Y" }}
+            </div>
+          </div>
+        </div>
+
+        <article class="post-content {{ author.display_name }}">
+          {{ content }}
+          <div class="center signature">
+            <img src="/images/fox-sig.png" alt="">
+          </div>
+          <div class="center">
+            <a href="" class="post-after button">Back to the Blog</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>  
+  {% include footer.html %}
+</body>
+</html>
