@@ -1,3 +1,8 @@
+#= require libs/jquery.min
+#= require libs/waypoints
+#= require libs/featherlight
+#= require libs/featherlight.gallery
+
 $ -> 
 	$logo = $('.logo')
 	if $('.type-hero').length > 0
