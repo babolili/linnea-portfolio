@@ -1,3 +1,4 @@
+
 .type-hero {
   @extend %clearing-block;
   padding-bottom: $padding-xl;
@@ -82,6 +83,9 @@
   }
   &.alternate {
     @include transform(rotateZ(-10deg));
+    @include media($tablet) {
+      display: none;
+    }
     .left .wing {
       @include animation(left-wing-1 1.5s infinite alternate);
       @include transform-origin(right center);
@@ -92,11 +96,64 @@
     }
   }
 }
+@include keyframes(beetle-shake-1) {
+  0% {
+    @include transform(rotateZ(0deg));
+  }
+  100% {
+    @include transform(rotateZ(1deg));
+  }
+}
 
-.white-about-container {
-  background: white;
+@include keyframes(beetle-shake-2) {
+  0% {
+    @include transform(rotateZ(0deg));
+  }
+  100% {
+    @include transform(rotateZ(-1deg));
+  }
+}
+
+.beetle {
+  @include animation(beetle-shake-1 0.8s infinite alternate);
+  &:hover {
+    @include animation(beetle-shake-1 0.1s infinite alternate);  
+  }
+  &.alternate {
+    @include animation(beetle-shake-2 0.8s infinite alternate);
+    @include media($tablet) {
+      display: none;
+    }
+    &:hover {
+      @include animation(beetle-shake-2 0.1s infinite alternate);  
+    }
+  }
+}
+.contact {
   @extend %clearing-block;
-  padding: $padding-xl 0;
+  padding-bottom: $padding-xl;
+  background: white;
+  .text {
+    @include col(7,0,$tablet,12,0);
+    padding-top: $padding-xl;
+    b {
+      color: $blue;
+    }
+  }
+  .contact-form {
+    padding-top: $padding-l;
+    @include clearfix;
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+    }
+    textarea {
+      height: $input-base-height*3;
+    }
+    input[type="submit"] {
+      @include button(white, $blue, $blue, $blue);
+      float: right;
+    }
+  }
 }
 .about-intro {
   @include col(8,2,$phone,9,0);

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The SMaaS project</title>
-    <description>Short Messaging as a service: converting online software into SMS-based services</description>
+    <title>Linnea Strid Portfolio</title>
+    <description>The portfolio of Linnea Strid - UX and Frontend designer</description>
     <link>http://smaasproject.com/</link>
     <atom:link href="http://smaasproject.com/feed.xml" rel="self" type="application/rss+xml" />
     

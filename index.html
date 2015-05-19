@@ -73,10 +73,37 @@ layout: default
     </div>
   </div>
 </div>
-<div class="white-about-container">
+
+<div class="contact">
   <div class="container">
-    <div class="about-intro">
-      <h1>About <b>Me</b></h1>
+    <div class="butterfly">
+      <div class="beetle">
+        {% image butterflies/beetle/1.png %}
+      </div>
+    </div>
+    <div class="text">
+      <h1>
+        Get in <b>Touch</b>
+      </h1>
+      <p>
+        Interested in working together? Get in touch through the form below.
+      </p>
+      <div class="contact-form">
+        <form action="https://getsimpleform.com/messages?form_api_token=8dc076217fca5678cec3220eaa66b329" method="post">
+          <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+          <input type='hidden' name='redirect_to' value='<the complete return url e.g. http://fooey.com/thank-you.html>' />
+          <!-- all your input fields here.... -->
+          <input type='text' name='name' id="name" placeholder="Your Name"/>
+          <input type='email' name='email' id="email" placeholder="Your Email Address"/>
+          <textarea name="" id="" cols="30" rows="10" placeholder="What would you like to talk about?"></textarea>
+          <input type='submit' value='Send Message' />
+        </form>
+      </div>
+    </div>
+    <div class="butterfly alternate">  
+      <div class="beetle alternate">
+        {% image butterflies/beetle/2.png %}
+      </div>
     </div>
   </div>
 </div>

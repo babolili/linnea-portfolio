@@ -1,8 +1,8 @@
 # Site settings
-title:       "The SMaaS project"
+title:       "Linnea Strid Portfolio"
 email:       stridlinnea@gmail.com"
 author:      "Linnea Strid"
-description: "Short Messaging as a service: converting online software into SMS-based services"
+description: "The portfolio of Linnea Strid - UX and Frontend designer"
 url:         "http://smaasproject.com"
 
 # Authors
@@ -10,7 +10,7 @@ authors:
   linnea:
     name: "Linnea Strid"
     display_name: "Linnea Strid"
-    email: linnea@seriousfox.co.uk
+    email: stridlinnea@gmail.com
     twitter: babolili
     avatar: "/images/team/linnea.png"
     active: ""

@@ -83,5 +83,19 @@ header {
         }
       }
     }
+    .social-row {
+      display: inline-block;
+      border-left: 1px solid $salmon;
+      padding-left: $padding-base;
+      a {
+        font-size: rem(18px);
+        color: $text-body-color;
+        display: inline-block;
+        padding: 0 $padding-xs;
+        &:hover {
+          color: darken($salmon, 10%);
+        }
+      }
+    }
   }
 }
