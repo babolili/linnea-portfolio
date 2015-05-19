@@ -162,6 +162,14 @@
     h2 {
       padding-bottom: $padding-base;
     }
+    @include media($tablet) {
+      text-align: center;
+      .third {
+        max-height: 800px;
+        overflow: hidden;
+        margin-bottom: $padding-s;
+      }
+    }
     .responsive {
       text-align: center;
       img {
@@ -169,6 +177,18 @@
         max-width: 50%;
         border-color: transparent;
       }
+    }
+    .small-showcase {
+      @include col(8,2,$tablet,12,0);
+      img {
+        border: 0px;
+      }
+    }
+    &.teal {
+      background: $fox-teal;
+    }
+    &.orange {
+      background: $fox-yellow;
     }
   }
   .third {
@@ -281,4 +301,51 @@
   &.evolve-my-retirement {
     @include case-study-colour($green);
   }
+}
+@mixin color-list-6($color-1, $color-2, $color-3, $color-4, $color-5, $color-6) {
+  float: left;
+  width: 16.666666667%;
+  text-align: center;
+  background-color: $color-1;
+  @include media($tablet) {
+    width: 33.333333333%;
+  }
+  &:nth-child(2) {
+    background: $color-2;
+  }
+  &:nth-child(3) {
+    background: $color-3;
+  }
+  &:nth-child(4) {
+    background: $color-4;
+  }
+  &:nth-child(5) {
+    background: $color-5;
+  }
+  &:nth-child(6) {
+    background: $color-6;
+  }
+}
+.seriousfox-logo {
+  @include clearfix;
+  li {
+    @include color-list-6($fox-orange, $fox-yellow, $fox-red, $fox-teal, $fox-blue, $fox-darkblue);
+  }
+}
+.seriousfox-team {
+  @include clearfix;
+  margin-top: $padding-xl;
+  li {
+    @include color-list-6($alex, $josh, $linnea, $marin, $ale, $fox);
+  }
+}
+.mh-logo {
+  @include clearfix;
+  margin-top: $padding-xl;
+  li {
+    @include color-list-6($mh-purple, $mh-blue, $mh-icebox, $mh-green, $mh-yellow, $mh-red);
+  }
+}
+.board-container {
+  background: $mh-board;
 }

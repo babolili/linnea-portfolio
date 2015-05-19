@@ -38,7 +38,7 @@ layout: default
       <div class="case-study-body">
         <blockquote>
           <h3>
-            Matterhorn is a Serious Fox product that I have been involved in designing and building over the past year.
+            Matterhorn is web-based project management tool that I have been involved in designing and building over the past year.
           </h3>
         </blockquote>
         <p>
@@ -49,16 +49,29 @@ layout: default
   </div>
   <div class="showcase">
     <div class="container">
-      <div class="big-showcase">
-      	{% image work/up-portals/home.png %}
-      </div>
-      <div class="big-showcase">
-      	{% image work/up-portals/first-works.png %}
-      </div>
+      <a data-featherlight="{% asset_path work/matterhorn/home.png %}" class="big-showcase zoom-caption">
+      	{% image work/matterhorn/home.png %}
+      </a>
+      <a data-featherlight="{% asset_path work/matterhorn/planner.png %}" class="big-showcase zoom-caption">
+      	{% image work/matterhorn/planner.png %}
+      </a>
     </div>
   </div>
-  <div class="container">
-    <div class="case-study-body">
+  <div class="mh-logo">
+    <li>{% image work/matterhorn/logo.svg %}</li>
+    <li>{% image work/matterhorn/logo.svg %}</li>
+    <li>{% image work/matterhorn/logo.svg %}</li>
+    <li>{% image work/matterhorn/logo.svg %}</li>
+    <li>{% image work/matterhorn/logo.svg %}</li>
+    <li>{% image work/matterhorn/logo.svg %}</li>
+  </div>
+  <div class="board-container">
+    <div class="container">
+      <div class="case-study-body">
+        <a data-featherlight="{% asset_path work/matterhorn/board.gif %}" class=" zoom-caption">
+          {% image work/matterhorn/board.gif %}
+        </a>
+      </div>
     </div>
   </div>
 </div>
