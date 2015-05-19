@@ -19,3 +19,6 @@ $ ->
 			$('body').addClass 'noscroll'
 	$(document).on 'click', '.featherlight-close, .featherlight', (e) ->
 			$('body').removeClass 'noscroll'
+	$(document).on 'click', '.nav-button', (e) ->
+		$(this).toggleClass 'show'
+		$('.bubble-nav').toggleClass 'show'

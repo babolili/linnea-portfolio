@@ -29,6 +29,7 @@ $visual-grid: false;
 
 $min-max-width: new-breakpoint(min-width 1400px 12);
 $min-big-tablet: new-breakpoint(min-width 991px 12);
+$min-large-phone: new-breakpoint(min-width 680px 12);
 
 // Define your breakpoints
 $small-screen: new-breakpoint(max-width 1280px 12);

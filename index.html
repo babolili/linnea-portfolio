@@ -93,8 +93,10 @@ layout: default
           <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
           <input type='hidden' name='redirect_to' value='<the complete return url e.g. http://fooey.com/thank-you.html>' />
           <!-- all your input fields here.... -->
-          <input type='text' name='name' id="name" placeholder="Your Name"/>
-          <input type='email' name='email' id="email" placeholder="Your Email Address"/>
+          <div class="two-up-row">
+            <input type='text' name='name' id="name" placeholder="Your Name"/>
+            <input type='email' name='email' id="email" placeholder="Your Email Address"/>
+          </div>
           <textarea name="" id="" cols="30" rows="10" placeholder="What would you like to talk about?"></textarea>
           <input type='submit' value='Send Message' />
         </form>
