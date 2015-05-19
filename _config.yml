@@ -15,12 +15,14 @@ authors:
     active: ""
 
 # Google analytics
-# google_analytics: UA-44214769-6
+google_analytics: 'UA-63176802-1'
 
 # Optional features
 animated:           false
 show_related_posts: true
 show_post_footers:  true
+
+
 
 # Disqus post comments
 # (leave blank to disable Disqus)
