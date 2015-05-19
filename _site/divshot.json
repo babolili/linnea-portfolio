@@ -1,6 +1,6 @@
 {
-  "name": "linnea-portfolio",
-  "root": "./",
+  "name": "smaas",
+  "root": "_site",
   "clean_urls": true,
   "error_page": "error.html"
 }
