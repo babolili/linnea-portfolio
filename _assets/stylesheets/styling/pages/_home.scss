@@ -22,7 +22,7 @@
     @include transform(rotateY(0deg) scale(1,1));
   }
   100% {
-    @include transform(rotateY(-40deg) scale(1.1,1.05));
+    @include transform(rotateY(40deg) scale(1.1,1.05));
   }
 }
 @include keyframes(right-wing-1) {
@@ -35,29 +35,34 @@
 }
 @include keyframes(left-shadow-1) {
   0% {
-    @include transform(rotateY(-20deg) translateY(-2%) scale(1.1,1.1));
+    @include transform(rotateY(-20deg) translateY(-2%));
   }
   100% {
-    @include transform(rotateY(0deg) translateY(-2%) scale(1.2,1.2));
+    @include transform(rotateY(-1deg) translateY(-2%) scale(1.2,1.2));
   }
 }
 @include keyframes(right-shadow-1) {
   0% {
-    @include transform(rotateY(-20deg) translateY(-2%) scale(1.1,1.1));
+    @include transform(rotateY(20deg) translateY(-2%));
   }
   100% {
-    @include transform(rotateY(-0deg) translateY(-2%) scale(1.2,1.2));
+    @include transform(rotateY(1deg) translateY(-2%) scale(1.2,1.2));
   }
 }
 
 .butterfly {
   @include col(2,0,$tablet,4,0);
   padding-top: 5%;
-  z-index: 1;
   @include transform(rotateZ(10deg));
   .shadow {
     position: absolute;
     top: 0px;
+    z-index: 0;
+    max-width: 100%;
+    -moz-transform-origin: 0 0;
+  }
+  .wing {
+    
   }
 
   .left, .right {
@@ -68,31 +73,27 @@
   .left .wing {
     @include animation(left-wing-1 1.8s infinite alternate);
     @include transform-origin(right center);
+    z-index: 9;
   }
   .right .wing {
     @include animation(right-wing-1 1.8s infinite alternate);
     @include transform-origin(left center);
+    z-index: 9;
   }
   .left .shadow {
     @include animation(left-shadow-1 1.8s infinite alternate);
     @include transform-origin(right center);
+    z-index: -1;
   }
   .right .shadow {
     @include animation(right-shadow-1 1.8s infinite alternate);
     @include transform-origin(left center);
+    z-index: -1;
   }
   &.alternate {
     @include transform(rotateZ(-10deg));
     @include media($tablet) {
       display: none;
-    }
-    .left .wing {
-      @include animation(left-wing-1 1.5s infinite alternate);
-      @include transform-origin(right center);
-    }
-    .right .wing {
-      @include animation(right-wing-1 1.5s infinite alternate);
-      @include transform-origin(left center);
     }
   }
 }
