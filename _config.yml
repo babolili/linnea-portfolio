@@ -1,0 +1,52 @@
+# Site settings
+title:       "Linnea Strid Portfolio"
+email:       "stridlinnea@gmail.com"
+author:      "Linnea Strid"
+description: "The portfolio of Linnea Strid - UX and Frontend designer"
+url:         "http://linneastrid.com"
+
+# Authors
+authors:
+  linnea:
+    name: "Linnea Strid"
+    display_name: "Linnea Strid"
+    email: linnea@seriousfox.co.uk
+    twitter: babolili
+    active: ""
+
+# Google analytics
+google_analytics: 'UA-63176802-1'
+
+# Optional features
+animated:           false
+show_related_posts: true
+show_post_footers:  true
+
+
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname:
+
+# Social icons
+
+show_social_icons: true
+github_username: babolili
+stackoverflow_id:
+twitter_username: babolili
+
+google_plus_id:
+linkedin_username:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Build settings
+markdown:     redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+permalink:    pretty
+paginate:     10
+sass:
+  compressed: true
+

@@ -1,0 +1,75 @@
+%styled-select-base {
+  width: 100%;
+  overflow: hidden;
+  //background: image-url('select.png') no-repeat right;
+  select {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+
+/*
+<div class="standard-styled-select">
+  <select name="" id="">
+    <option value="">A</option>
+    <option value="">B</option>
+    <option value="">C</option>
+    <option value="">D</option>
+  </select>
+</div> */
+
+.standard-styled-select {
+  @extend %styled-select-base;
+  height: $input-base-height;
+  border-radius: $border-base-radius;
+  background-color: $input-background-color;
+  border: 1px solid $form-border-color;
+  z-index: 99;
+
+  select {
+    width: 100%;
+    height: $input-base-height;
+    padding: $input-base-padding;
+    font-size: $form-font-size;
+  }
+}
+
+.styled-checkbox {
+  input[type=checkbox] {
+    visibility: hidden;
+  }
+  width: 30px;
+  height: 30px;
+  border: 4px solid $border-base-color;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 3px;
+  label {
+    cursor: pointer;
+    @include position(absolute,0px 0 0 0);
+    width: 30px;
+    height: 30px;
+    &:after {
+      opacity: 0.2;
+      content: '';
+      background: transparent;
+      @include position(absolute,6px 0 0 4px);
+      width: 12px;
+      height: 5px;
+      border: 3px solid $border-base-color;
+      border-top: none;
+      border-right: none;
+      @include transform(rotate(-50deg));
+    }
+    &:hover:after {
+      opacity: 0.5;
+    }
+  }
+  input[type=checkbox]:checked + label:after {
+    opacity: 1;
+  }
+}

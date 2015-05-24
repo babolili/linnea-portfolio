@@ -1,0 +1,168 @@
+
+.type-hero {
+  @extend %clearing-block;
+  padding-bottom: $padding-xl;
+  padding-top: $navbar-height;
+  background: white;
+
+  .text {
+    @include col(7,0,$tablet,12,0);
+    padding-top: 10%;
+    h1 {
+      font-size: rem(80px);
+      font-weight: $light;
+      b {
+        color: $salmon;
+      }
+    }
+  }
+}
+@include keyframes(left-wing-1) {
+  0% {
+    @include transform(rotateY(0deg) scale(1,1));
+  }
+  100% {
+    @include transform(rotateY(40deg) scale(1.1,1.05));
+  }
+}
+@include keyframes(right-wing-1) {
+  0% {
+    @include transform(rotateY(0deg) scale(1,1));
+  }
+  100% {
+    @include transform(rotateY(-40deg) scale(1.1,1.05));
+  }
+}
+@include keyframes(left-shadow-1) {
+  0% {
+    @include transform(rotateY(-20deg) translateY(-2%));
+  }
+  100% {
+    @include transform(rotateY(-1deg) translateY(-2%) scale(1.2,1.2));
+  }
+}
+@include keyframes(right-shadow-1) {
+  0% {
+    @include transform(rotateY(20deg) translateY(-2%));
+  }
+  100% {
+    @include transform(rotateY(1deg) translateY(-2%) scale(1.2,1.2));
+  }
+}
+
+.butterfly {
+  @include col(2,0,$tablet,4,0);
+  padding-top: 5%;
+  @include transform(rotateZ(10deg));
+  .shadow {
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+    max-width: 100%;
+    -moz-transform-origin: 0 0;
+  }
+  .wing {
+    
+  }
+
+  .left, .right {
+    width: 50%;
+    float: left;
+    position: relative;
+  }
+  .left .wing {
+    @include animation(left-wing-1 1.8s infinite alternate);
+    @include transform-origin(right center);
+    z-index: 9;
+  }
+  .right .wing {
+    @include animation(right-wing-1 1.8s infinite alternate);
+    @include transform-origin(left center);
+    z-index: 9;
+  }
+  .left .shadow {
+    @include animation(left-shadow-1 1.8s infinite alternate);
+    @include transform-origin(right center);
+    z-index: -1;
+  }
+  .right .shadow {
+    @include animation(right-shadow-1 1.8s infinite alternate);
+    @include transform-origin(left center);
+    z-index: -1;
+  }
+  &.alternate {
+    @include transform(rotateZ(-10deg));
+    @include media($tablet) {
+      display: none;
+    }
+  }
+}
+@include keyframes(beetle-shake-1) {
+  0% {
+    @include transform(rotateZ(0deg));
+  }
+  100% {
+    @include transform(rotateZ(1deg));
+  }
+}
+
+@include keyframes(beetle-shake-2) {
+  0% {
+    @include transform(rotateZ(0deg));
+  }
+  100% {
+    @include transform(rotateZ(-1deg));
+  }
+}
+
+.beetle {
+  @include animation(beetle-shake-1 0.8s infinite alternate);
+  &:hover {
+    @include animation(beetle-shake-1 0.1s infinite alternate);  
+  }
+  &.alternate {
+    @include animation(beetle-shake-2 0.8s infinite alternate);
+    @include media($tablet) {
+      display: none;
+    }
+    &:hover {
+      @include animation(beetle-shake-2 0.1s infinite alternate);  
+    }
+  }
+}
+.contact {
+  @extend %clearing-block;
+  padding-bottom: $padding-xl;
+  background: white;
+  .text {
+    @include col(7,0,$tablet,12,0);
+    padding-top: $padding-xl;
+    b {
+      color: $blue;
+    }
+  }
+  .contact-form {
+    padding-top: $padding-l;
+    @include clearfix;
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      color: $blue;
+    }
+    .two-up-row {
+      @include clearfix;
+      input {
+        @include col(6,0,$large-phone, 12,0);
+      }
+    }
+    textarea {
+      height: $input-base-height*3;
+    }
+    input[type="submit"] {
+      @include button(white, $blue, $blue, $blue);
+      float: right;
+    }
+  }
+}
+.about-intro {
+  @include col(8,2,$phone,9,0);
+}
