@@ -31,9 +31,7 @@
   }
   .main-caption {
     @include col(5,1,$big-tablet,6,0);
-    @include media($tablet) {
-    	@include simple-col(8,2);
-    }
+    
     p {
       padding-bottom: $padding-base;
     }
@@ -46,9 +44,6 @@
     position: relative;
     @include col(6,0,$big-tablet,6,0);
     @include omega();
-    @include media($tablet) {
-    	@include simple-col(8,2);
-    }
   }
   .ghost-button {
     @include button($salmon, $background, $salmon, white);
@@ -57,15 +52,23 @@
     @include button($background, $salmon, $salmon, white);
   }
   @include media($big-tablet) {
+  	.main-caption {
+  		padding: $padding-l $padding-xl*2;
+  	}
     &:before {
       width: 100%;
       right: 0px;
     }
   }
+  @include media($tablet) {
+  	.image-container, .main-caption {
+  		@include simple-col(8,2);
+  		padding: 0px;
+  	}
+  }
   @include media($large-phone) {
     .image-container, .main-caption {
       @include simple-col(12,0);
-      padding: 0px;
     }
   }
 }
@@ -77,7 +80,7 @@
 	display: flex;
 	align-items: stretch;
 	.main-caption {
-		@include col(6,0,$big-tablet,8,2);
+		@include col(6,0,$big-tablet,6,0);
 		padding: $padding-xl $padding-xl 0 $padding-l;
 		margin-top: $padding-xl*2;
 		position: relative;
@@ -89,7 +92,7 @@
 		}
 	}
 	.image-container {
-		@include col(6,0,$big-tablet,8,2);
+		@include col(6,0,$big-tablet,6,0);
 		display: block;
 		position: relative;
 		overflow: hidden;
@@ -122,13 +125,32 @@
 			border-color: white;
 		}
 	}
+	@include media($big-tablet) {
+		.main-caption {
+			padding: $padding-l $padding-xl*2;
+			margin-top: 0px;
+		}
+		.image-container {
+			padding: $padding-l 0;
+		}
+	  &:before {
+	    width: 100%;
+	    right: 0px;
+	  }
+	}
+	@include media($tablet) {
+		.image-container, .main-caption {
+			@include simple-col(8,2);
+			padding: 0px;
+			.ghost-button {
+				margin-bottom: $padding-l;
+			}
+		}
+	}
 	@include media($large-phone) {
 	  .image-container, .main-caption {
 	    @include simple-col(12,0);
 	    padding: 0px;
-	    .ghost-button {
-	    	margin-bottom: $padding-l;
-	    }
 	  }
 	}
 }
