@@ -30,7 +30,10 @@
     z-index: -1;
   }
   .main-caption {
-    @include col(5,1,$big-tablet,8,2);
+    @include col(5,1,$big-tablet,6,0);
+    @include media($tablet) {
+    	@include simple-col(8,2);
+    }
     p {
       padding-bottom: $padding-base;
     }
@@ -41,8 +44,11 @@
     margin-bottom: $padding-xl*2;
     padding-top: $padding-xl;
     position: relative;
-    @include col(6,0,$big-tablet,8,2);
+    @include col(6,0,$big-tablet,6,0);
     @include omega();
+    @include media($tablet) {
+    	@include simple-col(8,2);
+    }
   }
   .ghost-button {
     @include button($salmon, $background, $salmon, white);
