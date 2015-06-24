@@ -64,7 +64,7 @@
       }
     }
     .text {
-      @include col(6,0,$big-tablet,8,0);
+      @include col(6,0,$big-tablet,8,2);
       padding: $padding-xl;
       h1 {
         @include media($min-big-tablet) {
@@ -74,12 +74,14 @@
       h2 {
         padding-bottom: $padding-base;
       }
-      @include media($big-tablet) {
-        @include simple-col(8,2);
-      }
+      
       @include media($large-phone) {
-        @include simple-col(10,1);
+        @include simple-col(12,0);
+        padding: 0px;
       }
+    }
+    @include media($large-phone) {
+      padding: $padding-xl 0px;
     }
   }
   .case-study-intro {
@@ -96,6 +98,9 @@
       padding: $padding-xl $padding-xl;
       background: white;
       opacity: 0.8;
+      @include media($large-phone) {
+        @include simple-col(12,0);
+      }
       .skill-list {
         li {
           padding-bottom: $padding-xs;
@@ -116,6 +121,9 @@
     .case-study-body {
       @include col(7,0,$big-tablet,10,1);
       padding-top: $padding-xl;
+      @include media($large-phone) {
+        @include simple-col(12,0);
+      }
     }
   }
 
@@ -124,7 +132,9 @@
     @extend %case-study-typography;
     @include col(7,3,$big-tablet,10,1);
     padding-top: $padding-base;
-
+    @include media($large-phone) {
+      @include simple-col(12,0);
+    }
     .problem-row {
       display: flex;
       align-items: stretch;
@@ -197,6 +207,7 @@
   .fifth {
     @include col(2,0,$large-phone,4,0);
     text-align: center;
+    min-height: rem(300px);
     &:first-child {
       @include shift(1);
     }

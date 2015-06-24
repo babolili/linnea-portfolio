@@ -31,7 +31,6 @@
   }
   .main-caption {
     @include col(5,1,$big-tablet,8,2);
-
     p {
       padding-bottom: $padding-base;
     }
@@ -60,6 +59,7 @@
   @include media($large-phone) {
     .image-container, .main-caption {
       @include simple-col(12,0);
+      padding: 0px;
     }
   }
 }
@@ -115,6 +115,15 @@
 			background-color: white;
 			border-color: white;
 		}
+	}
+	@include media($large-phone) {
+	  .image-container, .main-caption {
+	    @include simple-col(12,0);
+	    padding: 0px;
+	    .ghost-button {
+	    	margin-bottom: $padding-l;
+	    }
+	  }
 	}
 }
 
