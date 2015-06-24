@@ -63,7 +63,7 @@
   @include media($tablet) {
   	.image-container, .main-caption {
   		@include simple-col(8,2);
-  		padding: 0px;
+  		text-align: center;
   	}
   }
   @include media($large-phone) {
@@ -141,7 +141,9 @@
 	@include media($tablet) {
 		.image-container, .main-caption {
 			@include simple-col(8,2);
-			padding: 0px;
+			text-align: center;
+			display: block;
+
 			.ghost-button {
 				margin-bottom: $padding-l;
 			}
@@ -150,7 +152,7 @@
 	@include media($large-phone) {
 	  .image-container, .main-caption {
 	    @include simple-col(12,0);
-	    padding: 0px;
+	    padding: $padding-base 0;
 	  }
 	}
 }
