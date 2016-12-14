@@ -22,14 +22,11 @@ animated:           false
 show_related_posts: true
 show_post_footers:  true
 
-
-
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname:
 
 # Social icons
-
 show_social_icons: true
 github_username: babolili
 stackoverflow_id:
