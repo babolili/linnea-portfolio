@@ -1,13 +1,13 @@
 html {
-  font-size: 16px;
+  font-size: 20px;
   @include media($small-screen) {
-    font-size: 15px;
+    font-size: 18px;
   }
   @include media($big-tablet) {
-    font-size: 14px;
+    font-size: 16px;
   }
   @include media($large-phone) {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -31,6 +31,10 @@ strong {
 b {
   font-weight: $bold;
 }
+em {
+  color: $salmon;
+  font-style: normal;
+}
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
@@ -53,6 +57,16 @@ b {
     }
   }
 }
+h1, h2, h3, h4, h5, h6, p {
+  a {
+    font-style: italic;
+    color: $salmon;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom: 1px solid $salmon;
+    }
+  }
+}
 
 
 h4,h5 {
@@ -60,17 +74,16 @@ h4,h5 {
 }
 
 h1 {
-  @include font($sans,rem(60px),$bold,$black);
+  @include font($sans, 6.854rem,$bold,$black);
   line-height: 0.85;
 }
 
 h2 {
-   @include font($sans,rem(30px),$light,$black);
+   @include font($sans,4.236rem,$bold,$black);
 }
 
 h3 {
-  @include font($sans,rem(27px),$regular,$text-body-color);
-  font-style: italic;
+  @include font($sans,2.618rem,$bold,$black);
 }
 
 blockquote {
@@ -78,19 +91,7 @@ blockquote {
   position: relative;
 }
 
-h4 {
-  @include font($sans,rem(21px),$semibold,$salmon);
-}
-
-h5 {
-  @include font($sans,rem(50px),$bold,$black);
-}
-
 p {
-  @include font($sans,rem(20px),$regular,$text-body-color);
+  @include font($sans,1.618rem,$regular,$black);
   line-height: 1.8;
-}
-
-blockquote {
-
 }

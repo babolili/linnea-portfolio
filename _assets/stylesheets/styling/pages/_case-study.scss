@@ -152,45 +152,7 @@
       }
     }
   }
-  .showcase {
-    background: white;
-    padding: $padding-xl;
-    @extend %clearing-block;
-    img {
-      border: 1px solid $border-base-color;
-    }
-    h2 {
-      padding-bottom: $padding-base;
-    }
-    @include media($tablet) {
-      text-align: center;
-      .third {
-        max-height: 800px;
-        overflow: hidden;
-        margin-bottom: $padding-s;
-      }
-    }
-    .responsive {
-      text-align: center;
-      img {
-        max-height: 250px;
-        max-width: 50%;
-        border-color: transparent;
-      }
-    }
-    .small-showcase {
-      @include col(8,2,$tablet,12,0);
-      img {
-        border: 0px;
-      }
-    }
-    &.teal {
-      background: $fox-teal;
-    }
-    &.orange {
-      background: $fox-yellow;
-    }
-  }
+
   .third {
     @include col(4,0,$large-phone,10,1);
   }
