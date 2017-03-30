@@ -99,7 +99,7 @@
       .skill-list {
         li {
           padding-bottom: $padding-xs;
-          @include font($serif,15px,$regular,$text-body-color);
+          @include font($sans,15px,$regular,$text-body-color);
         }
       }
       @include media($big-tablet) {
@@ -139,7 +139,7 @@
         line-height: 1.5;
       }
       h3 {
-        font-family: $script;
+        font-family: $sans;
         font-size: rem(40px);
       }
 
