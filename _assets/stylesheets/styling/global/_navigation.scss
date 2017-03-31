@@ -3,7 +3,7 @@ $navbar-height: rem(55px);
 header {
   position: relative;
   height: auto;
-  padding-bottom: $padding-xl;
+  padding: $padding-xl 0;
   
   .logo {
     background: $salmon image-url('logo.svg') no-repeat;
