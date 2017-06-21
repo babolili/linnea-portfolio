@@ -57,13 +57,14 @@ em {
     }
   }
 }
+
 h1, h2, h3, h4, h5, h6, p {
   a {
     color: $salmon;
     border-bottom: 1px solid transparent;
     @include transition(all 0.5s ease-in-out);
     &:hover {
-      border-bottom: 1px solid $salmon;
+      border-bottom: 5px solid darken($salmon, 10%);
     }
   }
 }
@@ -76,10 +77,12 @@ h4,h5 {
 h1 {
   @include font($sans, 6.854rem,$bold,$black);
   line-height: 0.85;
+  padding-bottom: $padding-l;
 }
 
 h2 {
    @include font($sans,4.236rem,$bold,$black);
+   padding-bottom: $padding-xl;
 }
 
 h3 {
@@ -94,4 +97,7 @@ blockquote {
 p {
   @include font($sans,1.618rem,$regular,$black);
   line-height: 1.8;
+  padding-bottom: $padding-base;
 }
+
+

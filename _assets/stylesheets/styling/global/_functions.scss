@@ -1,6 +1,6 @@
 
 //calculate rem and em sizes from px values
-$base-font-size: 16px;
+$base-font-size: 20px;
 
 @function rem($size) {
   $remSize: $size / $base-font-size;

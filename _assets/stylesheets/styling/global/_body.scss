@@ -11,8 +11,3 @@ body {
     padding: 0 $padding-l;
   }
 }
-.main-container {
-  @include outer-container;
-  background-color: $background;
-  min-height: 100%;
-}
