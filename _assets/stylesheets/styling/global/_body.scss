@@ -1,9 +1,14 @@
 body {
-  background-color: $background;
+  background: $background;
   &.noscroll {
   	height: 100%;
   	overflow: hidden;
   }
+}
+.content {
+  margin: 2rem;
+  background: $salmon;
+  padding: 4rem 0;
 }
 .container {
   @include outer-container;

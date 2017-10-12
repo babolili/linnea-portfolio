@@ -32,8 +32,9 @@ b {
   font-weight: $bold;
 }
 em {
-  color: $salmon;
   font-style: normal;
+  background-color: rgba($yellow, 0.8);
+  background-size: 100% 50%;
 }
 @mixin font-size($size) {
   font-size: $size;
@@ -49,23 +50,18 @@ em {
   h1, h2, h3, h4, h5, h6, p {
     a {
       font-style: italic;
-      color: $salmon;
-      border-bottom: 0px solid transparent;
-      &:hover {
-        border-bottom: 1px solid $salmon;
-      }
+      color: $blue;
+      border-bottom: 1px solid $blue;
     }
   }
 }
 
 h1, h2, h3, h4, h5, h6, p {
   a {
-    color: $salmon;
-    border-bottom: 1px solid transparent;
-    @include transition(all 0.5s ease-in-out);
-    &:hover {
-      border-bottom: 5px solid darken($salmon, 10%);
-    }
+    color: $blue;
+    border-bottom: 0.3rem solid $blue;
+    @include transition(all 0.3s ease-in-out);
+    position: relative;
   }
 }
 
@@ -75,18 +71,18 @@ h4,h5 {
 }
 
 h1 {
-  @include font($sans, 6.854rem,$bold,$black);
+  @include font($sans, 6.854rem,$bold,$blue);
   line-height: 0.85;
   padding-bottom: $padding-l;
 }
 
 h2 {
-   @include font($sans,4.236rem,$bold,$black);
+   @include font($sans,4.236rem,$bold,$blue);
    padding-bottom: $padding-xl;
 }
 
 h3 {
-  @include font($sans,2.618rem,$bold,$black);
+  @include font($sans,2.618rem,$bold,$blue);
 }
 
 blockquote {
@@ -95,7 +91,7 @@ blockquote {
 }
 
 p {
-  @include font($sans,1.618rem,$regular,$black);
+  @include font($sans,1.618rem,$regular,$blue);
   line-height: 1.8;
   padding-bottom: $padding-base;
 }

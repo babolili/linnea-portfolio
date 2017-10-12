@@ -18,7 +18,7 @@
       padding-bottom: $padding-base;
       &:before {
         content: '•';
-        color: $salmon;
+        color: $blue;
         position: absolute;
         left: 0px;
       }
@@ -35,7 +35,7 @@
       &:before {
         counter-increment: section;
         content: counters(section,".")".";
-        color: $salmon;
+        color: $blue;
         position: absolute;
         left: 0px;
       }
@@ -147,7 +147,7 @@
         @include col(6,0,$tablet,12,0);
         @include omega(2n);
         padding: $padding-xl;
-        background: $salmon;
+        background: $blue;
         @extend %white-fonts;
       }
     }
@@ -213,7 +213,7 @@
       text-align: center;
       font-family: "fontawesome";
       content: $fa-var-expand;
-      background-color: rgba($salmon,0.8); 
+      background-color: rgba($blue,0.8); 
       color: white;
       font-size: rem(80px);
       @include transition(opacity 0.2s ease-in-out);
@@ -249,7 +249,7 @@
     }
   }
   &.up-journals {
-    @include case-study-colour($salmon);
+    @include case-study-colour($blue);
   }
   &.up-portals {
     @include case-study-colour($blue);

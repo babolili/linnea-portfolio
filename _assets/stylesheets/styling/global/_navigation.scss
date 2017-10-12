@@ -1,12 +1,11 @@
 $navbar-height: rem(55px);
 
 header {
-  position: relative;
-  height: auto;
-  padding: $padding-xl 0;
+  position: absolute;
+  top: 0.5rem;
   
   .logo {
-    background: $salmon image-url('logo.svg') no-repeat;
+    background: rgba($yellow, 0.85) image-url('logo.svg') no-repeat;
     background-size: auto 80%;
     background-position: 45% center;
     height: rem(80px);
@@ -17,7 +16,7 @@ header {
     @include transition(all 1s ease-in-out);
     z-index: 99;
     &:hover {
-      background-color: darken($salmon, 15%);
+      background-color: $yellow;
       @include transform(rotate(180deg));
     }
     @include media($large-phone) {
@@ -29,5 +28,28 @@ header {
 .main-nav {
   h3 {
     padding-bottom: $padding-l;
+    a {
+      position: relative;
+      @include transition(all 0.3s ease-in-out);
+      &:after {
+        border-top: (2.618rem)/1.5 solid transparent;
+        border-bottom: (2.618rem)/1.5 solid transparent;
+        border-left: (2.618rem)/1.5 solid $yellow;
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include transform(translateX(100%));
+        opacity: 0;
+      }
+      &:hover {
+        background: $yellow;
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
   }
+
 }

@@ -46,10 +46,10 @@
     @include omega();
   }
   .ghost-button {
-    @include button($salmon, $background, $salmon, white);
+    @include button($blue, $background, $blue, white);
   }
   .button {
-    @include button($background, $salmon, $salmon, white);
+    @include button($background, $blue, $blue, white);
   }
   @include media($big-tablet) {
     &:before {
@@ -66,7 +66,7 @@
 %alt-right-container {
 	@extend %clearing-block;
 	position: relative;
-	background: rgba($salmon,0.6);
+	background: rgba($blue,0.6);
 	z-index: 1;
 	display: flex;
 	align-items: stretch;
@@ -109,7 +109,7 @@
     }
 	}
 	.ghost-button {
-		@include button(white, lighten($salmon,5%), white, $salmon);
+		@include button(white, lighten($blue,5%), white, $blue);
 		margin-top: $padding-base;
 		&:hover {
 			background-color: white;
@@ -189,7 +189,7 @@
 			overflow: hidden;
 			.caption {
 				@include position(absolute, 0px 0px 0px 0px);
-				background-color: rgba($salmon,0.45);
+				background-color: rgba($blue,0.45);
 				padding: $padding-xl*2 $padding-xl;
 				h1,h2 {
 					color: white;
@@ -217,7 +217,7 @@
 					}
 				}
 				&:hover {
-					background-color: rgba($salmon,0.85);
+					background-color: rgba($blue,0.85);
 					.ghost-button, h2 {
 						visibility: visible;
 						opacity: 1;

@@ -3,10 +3,12 @@
 {% include head.html %}
 <body>
 	{% include header.html %}
-	<div class="container">
-		{{ content }}	
-		<p>Is there anything else you want to know about me? </p>
-		{% include navigation.html %}
+	<div class="content">
+		<div class="container">
+			{{ content }}	
+			<p>Is there anything else you want to know about me? </p>
+			{% include navigation.html %}
+		</div>
 	</div>
 </body>
 {% include footer.html %}
