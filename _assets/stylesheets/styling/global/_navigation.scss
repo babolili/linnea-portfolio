@@ -26,6 +26,9 @@ header {
 }
 
 .main-nav {
+  clear: both;
+  width: 100%;
+  display: block;
   h3 {
     padding-bottom: $padding-l;
     a {

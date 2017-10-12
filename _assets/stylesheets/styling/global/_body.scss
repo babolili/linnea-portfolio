@@ -12,7 +12,12 @@ body {
 }
 .container {
   @include outer-container;
+  padding: 0 4rem;
   @include media($large-phone) {
     padding: 0 $padding-l;
   }
+}
+
+.text {
+  @include col(8,0,$tablet,12,0);
 }

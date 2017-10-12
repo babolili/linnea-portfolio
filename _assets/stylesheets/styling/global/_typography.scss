@@ -34,7 +34,7 @@ b {
 em {
   font-style: normal;
   background-color: rgba($yellow, 0.8);
-  background-size: 100% 50%;
+  display: inline-block;
 }
 @mixin font-size($size) {
   font-size: $size;
