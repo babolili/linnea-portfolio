@@ -61,3 +61,30 @@
   color: $color;
 }
 
+@mixin link-styling($border, $font-size, $padding-size) {
+  color: $blue;
+  border-bottom: $border solid $blue;
+  position: relative;
+  background: rgba($yellow,0.7);
+  @include transition(all 0.3s ease-in-out);
+  &:after {
+    @include transition(opacity 0.3s ease-in-out);
+    border-top: ($font-size + $padding-size)/2.2 solid transparent;
+    border-bottom: ($font-size + $padding-size)/2.2 solid transparent;
+    border-left: ($font-size + $padding-size)/2.2 solid darken($salmon, 10%);
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include transform(translateX(100%));
+    opacity: 0;
+  }
+  &:hover {
+    background: darken($salmon, 10%);
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+

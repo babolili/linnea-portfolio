@@ -10,7 +10,6 @@ header {
     background-position: 45% center;
     height: rem(80px);
     width: rem(80px);
-    border-radius: 50%;
     display: block;
     margin-left: rem(80px);
     @include transition(all 1s ease-in-out);
@@ -32,27 +31,7 @@ header {
   h3 {
     padding-bottom: $padding-l;
     a {
-      position: relative;
-      @include transition(all 0.3s ease-in-out);
-      &:after {
-        border-top: (2.618rem)/1.5 solid transparent;
-        border-bottom: (2.618rem)/1.5 solid transparent;
-        border-left: (2.618rem)/1.5 solid $yellow;
-        content: '';
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-        @include transform(translateX(100%));
-        opacity: 0;
-      }
-      &:hover {
-        background: $yellow;
-        &:after {
-          opacity: 1;
-        }
-      }
+      @include link-styling(0.3rem, 2.618rem, $padding-l)
     }
   }
-
 }

@@ -120,7 +120,6 @@
   }
 
   .case-study-body {
-    @extend %link-styling;
     @extend %case-study-typography;
     @include col(7,3,$big-tablet,10,1);
     padding-top: $padding-base;
