@@ -46,17 +46,9 @@ em {
     color: white;
   }
 }
-%link-styling {
-  h1, h2, h3, h4, h5, h6, p {
-    a {
-      font-style: italic;
-      color: $blue;
-      border-bottom: 1px solid $blue;
-    }
-  }
-}
 
-h1, h2, h3, h4, h5, h6, p {
+
+h1, h2, h3, h4, h5, h6 {
   a {
     color: $blue;
     border-bottom: 0.3rem solid $blue;
@@ -72,7 +64,7 @@ h4,h5 {
 
 h1 {
   @include font($sans, 6.854rem,$bold,$blue);
-  line-height: 0.85;
+  line-height: 1;
   padding-bottom: $padding-l;
 }
 
@@ -91,9 +83,11 @@ blockquote {
 }
 
 p {
-  @include font($sans,1.618rem,$regular,$blue);
-  line-height: 1.8;
+  @include font($sans,1.3rem,$regular,$blue);
+  line-height: 1.6;
   padding-bottom: $padding-base;
+  a {
+    @include link-styling(3px, 1.3rem, $padding-base)
+  }
 }
-
 
