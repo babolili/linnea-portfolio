@@ -7,7 +7,7 @@ body {
 }
 .content {
   margin: 2rem;
-  background: $salmon;
+  @include background(linear-gradient(to bottom, $salmon 0%, $peach 100%));
   padding: 4rem 0;
 }
 .container {
