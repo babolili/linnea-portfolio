@@ -7,7 +7,6 @@ permalink: /cv/
 ## What i do 
 
 ### Things I do (not necessarily in order):  
-
 - Talk to users and clients and environments to find problems
 - Examine problems to see if/how they could/need to be be solved.
 - Help create, nurture & explore new ideas through concept development

@@ -32,9 +32,7 @@ b {
   font-weight: $bold;
 }
 em {
-  font-style: normal;
-  background-color: rgba($yellow, 0.8);
-  display: inline-block;
+  font-style: italic;
 }
 @mixin font-size($size) {
   font-size: $size;
